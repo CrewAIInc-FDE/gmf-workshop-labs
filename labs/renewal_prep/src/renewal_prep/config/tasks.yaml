@@ -1,0 +1,7 @@
+draft_outreach:
+  description: >
+    Look up account {account_id} with get_client_account and draft an outreach
+    message about the customer's end-of-term options.
+  expected_output: >
+    A short outreach message.
+  agent: renewal_writer

@@ -1,0 +1,7 @@
+answer_question:
+  description: >
+    Answer this question from a customer service agent: {question}
+    Search the policy library first.
+  expected_output: >
+    A short answer in plain language.
+  agent: policy_assistant

@@ -1,0 +1,25 @@
+extract_documents:
+  description: >
+    List the inbox with list_inbox_documents and take the first {batch_size} documents.
+    For each, read it with get_inbox_document and extract: doc id, customer name,
+    account id (or "missing"), request type, language, urgency (high, normal, low) and
+    anything unusual (duplicate, misdirected, suspicious).
+  expected_output: >
+    One block per document with the extracted fields.
+  agent: intake_analyst
+route_documents:
+  description: >
+    For each extracted document, choose one queue from list_routing_queues and call
+    route_document with the doc id, queue, a one-sentence reason and the urgency.
+  expected_output: >
+    For each document: doc id, queue, urgency, reason, and the route_document status.
+  agent: router
+review_batch:
+  description: >
+    Review the routing. Re-read any high urgency, compliance_escalation, fraud_review
+    or misrouted document with get_inbox_document and correct the queue if needed
+    (call route_document again).
+  expected_output: >
+    A markdown table with columns Doc, Customer, Account, Request, Queue, Urgency,
+    Reason, then a short "Needs attention today" list and a "Corrections" list.
+  agent: triage_supervisor

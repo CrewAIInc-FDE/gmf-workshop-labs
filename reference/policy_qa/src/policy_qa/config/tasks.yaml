@@ -1,0 +1,30 @@
+research_policies:
+  description: >
+    Question from a customer service agent: {question}
+
+    Use search_policies at least twice with different wording (try mode "hybrid" and
+    mode "semantic", top_k 3 to 5). Read the full text of each relevant policy with
+    get_policy. List the rules that apply, with numbers, conditions and exceptions,
+    each tagged with its policy id. Note any policies that conflict or overlap.
+  expected_output: >
+    A bullet list of applicable rules, each with its policy id, plus any conflicts or
+    open questions.
+  agent: policy_researcher
+draft_answer:
+  description: >
+    Using only the research, draft the answer to: {question}
+    Plain language, at most 120 words, every rule cited like (POL-101). If something
+    needs a supervisor or more information from the customer, say what.
+  expected_output: >
+    A draft answer of at most 120 words with inline policy citations.
+  agent: answer_writer
+review_answer:
+  description: >
+    Review the draft answer to: {question}
+    Re-read each cited policy with get_policy. Correct any number, condition or
+    citation that does not match, and add any exception the customer needs to know.
+  expected_output: >
+    The final answer (at most 120 words, inline citations), then a line "Sources:"
+    listing the policy ids and titles, then a line "Review notes:" saying what you
+    changed, or "none".
+  agent: policy_reviewer

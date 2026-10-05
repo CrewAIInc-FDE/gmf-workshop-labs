@@ -1,0 +1,6 @@
+solve:
+  description: >
+    {problem}
+  expected_output: >
+    A clear, useful result for the person who asked.
+  agent: assistant

@@ -1,0 +1,17 @@
+[project]
+name = "intake_triage"
+version = "0.1.0"
+description = "Reference: batch triage with escalation review"
+requires-python = ">=3.10,<3.14"
+dependencies = ["crewai[tools]==1.15.23", "python-dotenv>=1.0"]
+
+[project.scripts]
+intake_triage = "intake_triage.main:run"
+run_crew = "intake_triage.main:run"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

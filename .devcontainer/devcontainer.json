@@ -1,0 +1,21 @@
+{
+  "name": "CrewAI Workshop - GM Financial",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "onCreateCommand": "bash .devcontainer/setup.sh",
+  "postCreateCommand": "test -f .env || cp .env.example .env",
+  "postAttachCommand": "bash .devcontainer/welcome.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "workbench.startupEditor": "none"
+      }
+    },
+    "codespaces": {
+      "openFiles": ["README.md", ".env"]
+    }
+  },
+  "hostRequirements": { "cpus": 2, "memory": "8gb", "storage": "32gb" },
+  "containerEnv": { "CREWAI_DISABLE_TELEMETRY": "true", "OTEL_SDK_DISABLED": "true" }
+}

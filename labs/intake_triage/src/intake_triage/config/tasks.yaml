@@ -1,0 +1,7 @@
+triage_document:
+  description: >
+    Read inbox document {doc_id} with get_inbox_document and decide which work queue
+    it belongs in (list_routing_queues shows the options).
+  expected_output: >
+    The queue name and one sentence explaining why.
+  agent: intake_clerk

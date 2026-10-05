@@ -1,0 +1,26 @@
+find_accounts:
+  description: >
+    Call list_expiring_agreements with as_of {as_of} and within_days {within_days}.
+    Take the first {max_accounts} accounts. For each, call get_client_account and
+    summarize: customer, product, vehicle, maturity date, residual value if a lease,
+    late payments in the last 12 months, notable payment statuses, preferred contact.
+  expected_output: >
+    One summary block per account.
+  agent: portfolio_analyst
+decide_options:
+  description: >
+    For each account, search the policies (search_policies, for example "lease end
+    options", "loyalty offer eligibility", "extension") and decide which options the
+    customer is eligible for and why, citing policy ids.
+  expected_output: >
+    Per account: eligible options with policy ids, ineligible options with the reason.
+  agent: offer_specialist
+write_outreach:
+  description: >
+    For each account, write outreach in the customer's preferred contact channel
+    covering only the eligible options.
+  expected_output: >
+    One section per account headed with the account id and customer name, containing
+    the message, followed by a one-line note for the retention agent listing the
+    policy ids the offers rely on.
+  agent: outreach_writer

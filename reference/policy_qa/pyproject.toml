@@ -1,0 +1,18 @@
+[project]
+name = "policy_qa"
+version = "0.1.0"
+description = "Reference: policy Q&A with citations and a review step"
+requires-python = ">=3.10,<3.14"
+dependencies = ["crewai[tools]==1.15.23", "python-dotenv>=1.0"]
+
+[project.scripts]
+policy_qa = "policy_qa.main:run"
+run_crew = "policy_qa.main:run"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
+project_id = "1cfd6dd6-d42f-458c-84bb-ffca611cef73"
