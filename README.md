@@ -14,7 +14,7 @@ this environment.
 
 ## In a Codespace
 
-The codespace installs everything for you (about two minutes the first time). When the
+The codespace installs everything for you (about five minutes the first time - start it before lunch). When the
 terminal shows the welcome message:
 
 1. Paste the OpenAI key from the front of the room into the `.env` file after
