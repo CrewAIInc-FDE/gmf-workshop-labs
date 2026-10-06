@@ -6,16 +6,33 @@
   "postAttachCommand": "bash .devcontainer/welcome.sh",
   "customizations": {
     "vscode": {
-      "extensions": ["ms-python.python"],
+      "extensions": [
+        "ms-python.python"
+      ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash",
         "workbench.startupEditor": "none"
       }
     },
     "codespaces": {
-      "openFiles": ["README.md", ".env"]
+      "openFiles": [
+        "README.md",
+        ".env"
+      ]
     }
   },
-  "hostRequirements": { "cpus": 2, "memory": "8gb", "storage": "32gb" },
-  "containerEnv": { "CREWAI_DISABLE_TELEMETRY": "true", "OTEL_SDK_DISABLED": "true" }
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "8gb",
+    "storage": "32gb"
+  },
+  "containerEnv": {
+    "CREWAI_DISABLE_TELEMETRY": "true",
+    "OTEL_SDK_DISABLED": "true"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    }
+  }
 }

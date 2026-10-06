@@ -15,3 +15,4 @@ build-backend = "hatchling.build"
 
 [tool.crewai]
 type = "crew"
+project_id = "79238cf4-c9bc-43dd-a9da-d4ab6cb55f36"
