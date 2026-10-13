@@ -1,4 +1,4 @@
-# CrewAI workshop labs - GM Financial, 2026-11-03
+# CrewAI workshop labs - GM Financial, 2026-11-04
 
 Hands-on labs for the afternoon build session. Everything here uses **Northwind Auto
 Finance**, a fictional auto lender, and synthetic data. Never put GM Financial data in
