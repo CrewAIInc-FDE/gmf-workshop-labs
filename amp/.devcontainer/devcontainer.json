@@ -1,0 +1,9 @@
+{
+  // Optional. Only needed if you build the image from source with "Dev Containers: Reopen in Container".
+  // Attendees normally start the prebuilt image with docker run and use "Attach to Running Container".
+  "name": "CrewAI field lab",
+  "build": { "dockerfile": "../Dockerfile", "context": ".." },
+  "remoteUser": "crew",
+  "workspaceFolder": "/home/crew/lab/policy_qa",
+  "overrideCommand": false
+}

@@ -1,0 +1,9 @@
+
+# --- CrewAI field lab ---
+cd /home/crew/lab/policy_qa 2>/dev/null
+echo
+echo "  CrewAI field lab - Policy Q&A on AMP"
+echo "  You are in: $(pwd)"
+echo "  CrewAI CLI: $(crewai --version 2>/dev/null)"
+echo "  Next: crewai login   (then follow the lab page)"
+echo
