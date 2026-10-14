@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Upload your edits to YOUR deployment.
+set -euo pipefail
+cd /home/crew/lab/policy_qa
+[ -s .deployment-id ] || { echo "No deployment yet. Run lab-deploy first." >&2; exit 1; }
+echo "+ crewai deploy push --uuid $(cat .deployment-id)"
+crewai deploy push --uuid "$(cat .deployment-id)" 2>&1 | grep -vE '^(Organization|Error_|Tags|Source_Type)' || true
+echo; echo "Check progress with: lab-status"

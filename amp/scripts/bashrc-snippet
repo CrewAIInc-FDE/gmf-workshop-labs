@@ -5,5 +5,5 @@ echo
 echo "  CrewAI field lab - Policy Q&A on AMP"
 echo "  You are in: $(pwd)"
 echo "  CrewAI CLI: $(crewai --version 2>/dev/null)"
-echo "  Next: crewai login   (then follow the lab page)"
+echo "  Next: crewai login, then lab-deploy   (the lab page has every step)"
 echo
