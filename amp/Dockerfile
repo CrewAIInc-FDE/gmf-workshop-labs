@@ -1,11 +1,11 @@
-# CrewAI field lab - dev container image
+# CrewAI workshop lab - dev container image
 #
 # Everything an attendee needs is baked in at build time: Python, uv, the CrewAI CLI and the
 # lab project with its dependencies. Nothing is downloaded when the container runs.
 # Crews are never run locally in this container - they are deployed to CrewAI AMP and run there.
 #
-# Build:  docker buildx build --platform linux/amd64,linux/arm64 -t <registry>/crewai-field-lab:<tag> amp/
-# Start:  docker run -d --name crewai-lab --restart unless-stopped <registry>/crewai-field-lab:<tag>
+# Build:  docker buildx build --platform linux/amd64,linux/arm64 -t <registry>/crewai-workshop-lab:<tag> amp/
+# Start:  docker run -d --name crewai-lab --restart unless-stopped <registry>/crewai-workshop-lab:<tag>
 
 FROM python:3.12-slim
 
@@ -45,13 +45,11 @@ RUN git config --global user.name "CrewAI lab" \
  && git config --global user.email "lab@example.com" \
  && git config --global init.defaultBranch main \
  && cd /home/crew/lab/policy_qa \
- && printf '.venv/\n__pycache__/\n*.pyc\n.env\n.deployment-id\n' > .gitignore \
+ && printf '.venv/\n__pycache__/\n*.pyc\n.env\n' > .gitignore \
  && git init -q && git add -A && git commit -qm "Lab starting point" \
  && printf '# Intentionally empty. The model key is set once for the whole AMP organization.\n' > .env
 
 COPY --chown=crew:crew scripts/ /home/crew/scripts/
-RUN mkdir -p /home/crew/.local/bin \
- && for c in lab-deploy lab-push lab-status; do ln -s /home/crew/scripts/$c /home/crew/.local/bin/$c; done
 RUN cat /home/crew/scripts/bashrc-snippet >> /home/crew/.bashrc
 
 WORKDIR /home/crew/lab/policy_qa

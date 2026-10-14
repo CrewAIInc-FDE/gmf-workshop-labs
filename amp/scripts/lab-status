@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# Show the status of YOUR deployment.
-set -euo pipefail
-cd /home/crew/lab/policy_qa
-[ -s .deployment-id ] || { echo "No deployment yet. Run lab-deploy first." >&2; exit 1; }
-echo "+ crewai deploy status --uuid $(cat .deployment-id)"
-crewai deploy status --uuid "$(cat .deployment-id)"
