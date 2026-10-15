@@ -1,0 +1,10 @@
+
+review_answer:
+  description: >
+    Review the answer to: {question}
+    Re-read every cited policy with get_policy. Correct anything that doesn't match.
+  expected_output: >
+    The final answer with inline citations like (POL-101), then a line
+    "Review notes:" saying what you changed, or "none".
+  agent: policy_reviewer
+  context: [answer_question]

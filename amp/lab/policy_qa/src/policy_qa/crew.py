@@ -21,25 +21,9 @@ class PolicyQACrew:
             verbose=True,
         )
 
-    # --- Part 3: remove the # at the start of the next 9 lines ---
-    # @agent
-    # def policy_reviewer(self) -> Agent:
-    #     return Agent(
-    #         config=self.agents_config["policy_reviewer"],  # type: ignore[index]
-    #         llm=llm(),
-    #         mcps=[connector()],
-    #         max_iter=12,
-    #         verbose=True,
-    #     )
-
     @task
     def answer_question(self) -> Task:
         return Task(config=self.tasks_config["answer_question"])  # type: ignore[index]
-
-    # --- Part 3: remove the # at the start of the next 3 lines ---
-    # @task
-    # def review_answer(self) -> Task:
-    #     return Task(config=self.tasks_config["review_answer"])  # type: ignore[index]
 
     @crew
     def crew(self) -> Crew:
