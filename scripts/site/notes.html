@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Speaker notes - $title · CrewAI Workshop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,500&family=Inter:wght@400;600&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="$root/assets/favicon.png">
+<link rel="stylesheet" href="$root/style.css?v=$cssver">
+</head>
+<body class="notes-page">
+<a class="skip-link" href="#nlist">Skip to notes</a>
+<header class="notes-head">
+  <div class="inner">
+    <h1>Speaker notes: $title</h1>
+    <span class="private">Private page - not linked, not indexed</span>
+  </div>
+</header>
+<div class="nstatus" role="region" aria-label="Clock and next slide">
+  <div class="inner">
+    <div><span class="lbl">Clock</span><span class="big" id="clock">--:--</span></div>
+    <div><span class="lbl">Timer</span><span class="big" id="timer">0:00</span></div>
+    <button type="button" class="btn alt" id="timer-btn">Start timer</button>
+    <button type="button" class="btn alt" id="timer-reset">Reset</button>
+    <div class="next" id="next" aria-live="polite"></div>
+    <div id="pace" aria-live="polite"></div>
+    <label class="nfollow"><input type="checkbox" id="follow"> Follow the slides window</label>
+  </div>
+</div>
+<main id="nlist" class="nlist" tabindex="-1">
+$cards
+</main>
+<nav class="nbar" aria-label="Slide navigation">
+  <div class="inner">
+    <button type="button" class="btn" id="prev">&larr; Previous</button>
+    <form class="jump" id="jump-form" action="#">
+      <label for="jump">Slide</label>
+      <input type="text" id="jump" inputmode="numeric" pattern="[0-9]*" autocomplete="off" aria-describedby="jump-total">
+      <span id="jump-total">of $total</span>
+      <button type="submit" class="btn go">Go</button>
+    </form>
+    <button type="button" class="btn" id="next-btn">Next &rarr;</button>
+  </div>
+</nav>
+<script type="application/json" id="deck-data">$data</script>
+<script src="$root/notes.js?v=$jsver"></script>
+</body>
+</html>

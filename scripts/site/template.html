@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="$lang">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>$title · CrewAI Workshop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;1,500&family=Inter:wght@400;600&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="$root/assets/favicon.png">
+<link rel="stylesheet" href="$root/style.css?v=$cssver">
+<link rel="stylesheet" href="$root/pygments.css?v=$cssver">
+</head>
+<body class="$bodyclass">
+<a class="skip-link" href="#top">Skip to content</a>
+<header class="site-header">
+  <div class="inner">
+    <a href="$root/"><img class="logo" src="$root/assets/crewai-logo-white.png" alt="CrewAI"></a>
+    <span class="badge"><span class="pill"></span><span class="label">Workshop</span></span>
+  </div>
+</header>
+<div class="layout$layoutclass">
+<nav class="toc" aria-label="$tocLabel">
+$crumb
+$toc
+</nav>
+<main id="top" tabindex="-1">
+$crumb
+<details class="toc-mobile"><summary>$tocLabel</summary>
+$toc
+</details>
+$content
+$pagenav
+</main>
+</div>
+<footer class="site-footer">
+  <div class="inner">
+    <img src="$root/assets/crewai-logo-dark.png" alt="CrewAI">
+    <span class="note">Built $built from <span class="sha">$commit</span></span>
+  </div>
+</footer>
+<a class="back-to-top" href="#top" aria-label="Back to top">↑</a>
+<script>
+(function () {
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  if (!links.length) return;
+  var map = {};
+  links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+  var headings = Array.from(document.querySelectorAll('main h2[id], main h3[id]'))
+    .filter(function (h) { return map[h.id]; });
+  var active = null;
+  function setActive(id) {
+    if (active === id) return;
+    links.forEach(function (a) { a.classList.remove('active'); });
+    if (map[id]) {
+      map[id].classList.add('active');
+      map[id].scrollIntoView({ block: 'nearest' });
+    }
+    active = id;
+  }
+  function onScroll() {
+    var line = window.scrollY + 120;
+    var current = headings[0] && headings[0].id;
+    for (var i = 0; i < headings.length; i++) {
+      if (headings[i].offsetTop <= line) current = headings[i].id;
+      else break;
+    }
+    if (current) setActive(current);
+    document.body.classList.toggle('scrolled', window.scrollY > 600);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+<script>
+(function () {
+  document.querySelectorAll('main pre').forEach(function (pre) {
+    var box = pre.closest('.codehilite') || pre;
+    if (box.querySelector('.copy-btn')) return;
+    var src = pre.querySelector('code') || pre;
+    var text = src.textContent.trimEnd();
+    // File contents (YAML, Python) keep a final newline so the next paste starts on its own line.
+    // Shell commands don't, so pasting one never runs it before it's edited.
+    if (/language-(yaml|python)/.test(box.className + ' ' + pre.className + ' ' + src.className)) text += '\n';
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copy-btn';
+    btn.setAttribute('aria-label', 'Copy code');
+    btn.title = 'Copy';
+    btn.innerHTML =
+      '<svg class="ci ci-copy" viewBox="0 0 24 24" aria-hidden="true">' +
+      '<rect x="9" y="9" width="12" height="12" rx="2"></rect>' +
+      '<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>' +
+      '<svg class="ci ci-check" viewBox="0 0 24 24" aria-hidden="true">' +
+      '<path d="M20 6 9 17l-5-5"></path></svg>';
+    btn.addEventListener('click', function () {
+      navigator.clipboard.writeText(text).then(function () {
+        btn.classList.add('copied'); btn.title = 'Copied!';
+        setTimeout(function () { btn.classList.remove('copied'); btn.title = 'Copy'; }, 1600);
+      }, function () {
+        btn.title = 'Copy failed';
+        setTimeout(function () { btn.title = 'Copy'; }, 1600);
+      });
+    });
+    box.classList.add('has-copy');
+    box.appendChild(btn);
+  });
+})();
+</script>
+$extra_scripts
+</body>
+</html>
