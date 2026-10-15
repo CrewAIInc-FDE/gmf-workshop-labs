@@ -133,8 +133,7 @@
     if (!presenting) return;
     if (k === 'b' || k === 'B' || k === '.') { e.preventDefault(); setBlank('b'); return; }
     if (k === 'w' || k === 'W') { e.preventDefault(); setBlank('w'); return; }
-    if (k === 'Escape' && blank.classList.contains('on')) { e.preventDefault(); unblank(); return; }
-    if (blank.classList.contains('on')) unblank();
+    if (blank.classList.contains('on')) { e.preventDefault(); unblank(); return; }
     if (k >= '0' && k <= '9' && k.length === 1) { e.preventDefault(); pushDigit(k); return; }
     if (k === 'Enter') {
       e.preventDefault();

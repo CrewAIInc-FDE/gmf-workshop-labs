@@ -68,7 +68,7 @@ Walk the arrows left to right.
 
 Slides page: **Present** button or `P` for full screen, one slide at a time. Next: arrow right/down,
 space, PageDown (most clickers send PageUp/PageDown). Previous: arrow left/up, PageUp, Shift+space. `Home`/`End` first/last. Type a number
-then `Enter` to jump. `B` or `.` blanks the screen to black and `W` to white; press the same key again to come back (any navigation key also returns, and `Esc` returns before it exits). `Esc` exits (first press clears a half-typed number). Out of present mode the page
+then `Enter` to jump. `B` or `.` blanks the screen to black and `W` to white; while blanked, any other key (arrows, space, PageDown, Esc) only brings the slide back and does not advance, like PowerPoint. `Esc` exits (first press clears a half-typed number). Out of present mode the page
 scrolls, with a left list of slide titles.
 
 Speaker view: `S` (or the button) opens the notes page in a popup in follow mode. It follows the slide
