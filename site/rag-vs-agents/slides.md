@@ -45,18 +45,22 @@ Morning module, 10:45 to 11:10 CT. Twenty minutes on retrieval versus agents, th
 @time 10:49
 
 @slide Where RAG stops
-@idea RAG reads documents. It cannot go and get things, or work through steps.
-- Other systems: "What is this customer's account status?"
-- More than one step: check eligibility, then pick an option, then draft
-- Deciding what to do next, based on what it found
-- Checking its own work
+@idea Search found the right policy and a plausible "yes". The customer's account said no.
+- Question: "Account NW-45512 lost their job. Can we approve a deferral?"
+- Search returns the deferral policy: "yes, with a letter"
+- The policy also says: no more than 30 days past due
+- The account says: 33 days past due
+@source Synthetic Northwind data. Real connector output: POL-101 and account NW-45512 (examples/c_agent_case.json)
 @notes
-- RAG answers from the documents it was given. The moment the answer lives in another system, or needs several steps, it runs out of road.
-- Northwind example: a customer writes "I lost hours at work and I cannot make my November payment." The policy library can tell you the deferral rules. It cannot tell you whether this customer qualifies, because that depends on their account.
-- Analogy: the librarian can hand you the policy binder. They cannot go and look at the customer's file, decide, and write the letter.
-- Likely question: "Can't we just put the account data in the library too?" Short answer: you can for static things, but account data changes by the minute and sits behind its own access rules. You want to ask the system, not copy it.
-- TODO (needs the W2 capture): the file SP/build/w2/EXAMPLES.md did not exist when this slide was written. When it lands, replace the first bullet with the real example it shows (a real question RAG answered wrongly or incompletely), cite the JSON it points to in the @source line, and quote the exact output. Do not invent a result. Until then, say the Northwind scenario above out loud and keep it hypothetical.
-- For engineers: the failure mode to look for is a confident answer built from the right policy with the wrong or missing account facts.
+- This is a real run against the Northwind connector, not a made-up story. The question: "A customer on account NW-45512 lost their job and wants to defer their payments. Can we approve a deferral?"
+- Search does its job. It returns POL-101, the Payment Deferral policy, as the top hit. That policy says a documented job loss can even earn a third deferral with supervisor approval. So a pure RAG answer would plausibly say "yes, with a separation letter."
+- But the same policy says, further down, that the account must be no more than 30 days past due. RAG cannot see this customer's account.
+- Look the account up and it is Jordan Pike, 33 days past due, 688 dollars past due, status delinquent, last two payments missed. So the standard deferral is not available. The confident answer would have been wrong.
+- Analogy: the librarian handed over the right binder. Nobody went and looked at the customer's file.
+- Likely question: "Can't we put the account data in the library too?" Short answer: account data changes by the minute and sits behind its own access rules. You want to ask the system, not copy it.
+- Likely question: "Was that a bad search?" Short answer: no, the search was right. The question needed more than a search.
+- For engineers: retrieval was hybrid, top 3: POL-101 0.863, POL-115 0.832, POL-107 0.529. The failure is not retrieval quality, it is that the deciding fact lives in another system. Raw output is in `c_agent_case.json` from the W2 capture.
+- Leave the ending open: "So what would you do next?" The next slide answers it.
 @time 10:51
 
 @slide An agent adds tools and steps
@@ -69,6 +73,7 @@ Morning module, 10:45 to 11:10 CT. Twenty minutes on retrieval versus agents, th
 - Tools are the key word. A tool is just something it is allowed to use. Policy search is one tool. Looking up a customer account is another. RAG becomes one tool among several.
 - Analogy: RAG is the reference librarian. An agent is a new hire. They have a job title, a goal, and access to a few systems, and they figure out the steps.
 - It decides what to do next based on what it has learned so far. That is where the flexibility comes from, and where the risk comes from too. Keep that in your head, because it matters in the next section.
+- Same case as the last slide: this is what would have saved the answer. Policy search gave the rule. An account lookup, `get_client_account`, gave the fact: 33 days past due. Two tools, and the agent knows to use the second one.
 - Likely question: "Is that the same as ChatGPT with plugins?" Short answer: similar idea, but here it runs as part of a business process, on a schedule or on demand, with a record of what it did. More on that in a few minutes.
 @time 10:54
 
@@ -76,7 +81,10 @@ Morning module, 10:45 to 11:10 CT. Twenty minutes on retrieval versus agents, th
 @idea Decide, use a tool, look at the result. Repeat until the job is done.
 @image assets/agent-loop.svg | A goal goes into a loop of three steps: decide the next step, use a tool, look at the result, then back to deciding. The use-a-tool step is highlighted. When the job is done the loop ends with an answer or action. Caption: the flexible part is the choice at each step, which is the point of an agent and the part you constrain.
 @notes
-- Walk the loop with a hardship request. Goal: help this customer. Decide: I need the deferral policy. Use a tool: policy search. Look at the result: deferral works if they are under 30 days past due. Decide again: I need their account. Use a tool: account lookup. And so on, until it has enough to answer.
+- Walk the loop with NW-45512, the case from two slides ago. Goal: can we approve a deferral? Decide: I need the deferral rule. Use a tool: policy search, which returns POL-101. Look at the result: deferral needs 30 days or fewer past due. Decide again: I need this customer's account. Use a tool: account lookup. Look at the result: 33 days past due.
+- Go round once more, because this is the good part. Decide: the standard deferral is out, so what are the options? Use a tool: search again, "options for a delinquent customer who cannot qualify for a deferral." That returns POL-109, loan modification. Look at the result: modification needs the account to be at least 12 months old and no more than 60 days past due, plus proof of income within 45 days. NW-45512 opened 2022-01-02 and is 33 days past due, so it fits.
+- Nobody told the agent to run that second search. It chose it because of what the account showed. That is the flexible step.
+- Contrast: same question for NW-46620, Lucia Ferraro. Zero days past due, one late payment in 12 months, a note that she reported reduced work hours in August. Different account, different outcome, same question.
 - The choice at each step is the flexible part. It is the reason agents can handle messy requests. It is also the thing you have to test and limit.
 - Analogy: it is how a new hire works a case. They do not follow a script. They look something up, think, look something else up.
 - Point at the highlighted box: the tool call is where the agent touches the real world.
