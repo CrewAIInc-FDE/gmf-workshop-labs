@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 590" width="1200" height="590" role="img" aria-labelledby="t d" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title id="t">The reviewer in code: agents.yaml and tasks.yaml</title><desc id="d">An excerpt of two YAML files from the policy Q and A crew. agents.yaml defines the policy reviewer with a role, a goal, and a backstory. tasks.yaml defines the review answer task with a description that includes the question input, an expected output that ends with a Review notes line, the agent that does it, and a context pointing at the first task so the reviewer starts from the draft.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#161616"/></marker></defs>
+<rect width="1200" height="590" fill="#F5F3F0"/>
+<rect x="20" y="20" width="540" height="550" rx="20" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="44" y="76" text-anchor="start" font-size="32" font-weight="700" fill="#161616">agents.yaml</text>
+<text x="44" y="128" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">policy_reviewer:</text>
+<text x="44" y="168" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">  role: &gt;</text>
+<text x="44" y="208" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">    Policy compliance</text>
+<text x="44" y="248" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">    reviewer</text>
+<text x="44" y="288" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">  goal: &gt;</text>
+<text x="44" y="328" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">    Check every answer</text>
+<text x="44" y="368" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">    against the policies</text>
+<text x="44" y="408" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">    it cites</text>
+<text x="44" y="448" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">  backstory: &gt;</text>
+<text x="44" y="488" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">    You re-read each cited</text>
+<text x="44" y="528" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">    policy with get_policy...</text>
+<rect x="580" y="20" width="600" height="550" rx="20" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="604" y="76" text-anchor="start" font-size="32" font-weight="700" fill="#161616">tasks.yaml</text>
+<text x="604" y="128" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">review_answer:</text>
+<text x="604" y="168" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">  description: &gt;</text>
+<text x="604" y="208" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">    Review the answer to:</text>
+<text x="604" y="248" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">    {question}</text>
+<text x="604" y="288" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">    Re-read each cited policy</text>
+<text x="604" y="328" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">  expected_output: &gt;</text>
+<text x="604" y="368" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">    The final answer, then a</text>
+<text x="604" y="408" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">    line "Review notes:"...</text>
+<text x="604" y="448" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">  agent: policy_reviewer</text>
+<text x="604" y="488" xml:space="preserve" font-size="28" fill="#161616" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace">  context: [answer_question]</text>
+</svg>

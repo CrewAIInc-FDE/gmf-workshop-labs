@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500" role="img" aria-labelledby="t d" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title id="t">RAG: search, then answer</title><desc id="d">Four boxes in a row joined by arrows: a question in plain words, a search of the policy library, a written answer based on what was found, and an answer that shows its source. The search box is highlighted. Below: the path is the same every time, with no other systems and no decisions along the way.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#161616"/></marker></defs>
+<rect width="1200" height="500" fill="#F5F3F0"/>
+<rect x="30" y="120" width="240" height="190" rx="20" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="150.0" y="208" text-anchor="middle" font-size="32" font-weight="600" fill="#161616">Question</text>
+<text x="150.0" y="252" text-anchor="middle" font-size="28" fill="#686868">in plain words</text>
+<rect x="330" y="120" width="240" height="190" rx="20" fill="#FF5A50" stroke="#161616" stroke-width="3"/>
+<text x="450.0" y="208" text-anchor="middle" font-size="32" font-weight="600" fill="#161616">Search</text>
+<text x="450.0" y="252" text-anchor="middle" font-size="28" fill="#161616">the policy library</text>
+<rect x="630" y="120" width="240" height="190" rx="20" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="750.0" y="190" text-anchor="middle" font-size="32" font-weight="600" fill="#161616">Write</text>
+<text x="750.0" y="234" text-anchor="middle" font-size="28" fill="#686868">from what</text>
+<text x="750.0" y="269" text-anchor="middle" font-size="28" fill="#686868">was found</text>
+<rect x="930" y="120" width="240" height="190" rx="20" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="1050.0" y="208" text-anchor="middle" font-size="32" font-weight="600" fill="#161616">Answer</text>
+<text x="1050.0" y="252" text-anchor="middle" font-size="28" fill="#686868">with its source</text>
+<line x1="272" y1="215" x2="326" y2="215" stroke="#161616" stroke-width="5" marker-end="url(#a)"/>
+<line x1="572" y1="215" x2="626" y2="215" stroke="#161616" stroke-width="5" marker-end="url(#a)"/>
+<line x1="872" y1="215" x2="926" y2="215" stroke="#161616" stroke-width="5" marker-end="url(#a)"/>
+<text x="600" y="80" text-anchor="middle" font-size="36" font-weight="700" fill="#161616">One question, one search, one answer</text>
+<text x="600" y="400" text-anchor="middle" font-size="34" font-weight="400" fill="#161616">The path is the same every time.</text>
+<text x="600" y="450" text-anchor="middle" font-size="30" font-weight="400" fill="#686868">No other systems. No decisions along the way.</text>
+</svg>

@@ -6,6 +6,7 @@ Start with the slides for each module. The hands-on labs are on the labs site, l
 
 | Module | What it covers | Slides |
 | --- | --- | --- |
+| Welcome | Opening remarks from the host organization | [Open the slides](welcome/slides.md) |
 | Foundations | Agents, tasks, and crews in plain language | [Open the slides](foundations/slides.md) |
 | RAG vs agents | When to retrieve and when to act | [Open the slides](rag-vs-agents/slides.md) |
 | Live build | Building a crew together, start to finish | [Open the slides](live-build/slides.md) |

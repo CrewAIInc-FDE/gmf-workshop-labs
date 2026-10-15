@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 510" width="1200" height="510" role="img" aria-labelledby="t d" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title id="t">Three emails versus accounting</title><desc id="d">Two panels. Left, an email to a customer: three different reminder emails, such as Hi Sam, due Friday, and Dear Sam, due this Friday, and Reminder: Friday. Three people, three emails, all fine. Right, posting an accounting entry: look up the account, apply the posting rule, record it in the ledger. One right way, the same every time.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#161616"/></marker></defs>
+<rect width="1200" height="510" fill="#F5F3F0"/>
+<rect x="20" y="20" width="570" height="470" rx="22" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="305" y="78" text-anchor="middle" font-size="34" font-weight="700" fill="#161616">An email to a customer</text>
+<rect x="50" y="108" width="510" height="64" rx="14" fill="#F5F3F0" stroke="#CCC5B9" stroke-width="2"/>
+<text x="305" y="151" text-anchor="middle" font-size="30" font-weight="400" fill="#161616">Hi Sam - due Friday!</text>
+<rect x="50" y="190" width="510" height="64" rx="14" fill="#F5F3F0" stroke="#CCC5B9" stroke-width="2"/>
+<text x="305" y="233" text-anchor="middle" font-size="30" font-weight="400" fill="#161616">Dear Sam, due this Friday.</text>
+<rect x="50" y="272" width="510" height="64" rx="14" fill="#F5F3F0" stroke="#CCC5B9" stroke-width="2"/>
+<text x="305" y="315" text-anchor="middle" font-size="30" font-weight="400" fill="#161616">Reminder: Friday.</text>
+<text x="305" y="400" text-anchor="middle" font-size="32" font-weight="700" fill="#161616">Three people, three emails.</text>
+<text x="305" y="448" text-anchor="middle" font-size="32" font-weight="700" fill="#161616">All fine.</text>
+<rect x="610" y="20" width="570" height="470" rx="22" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="895" y="78" text-anchor="middle" font-size="34" font-weight="700" fill="#161616">Posting an accounting entry</text>
+<rect x="640" y="108" width="510" height="64" rx="14" fill="#F5F3F0" stroke="#CCC5B9" stroke-width="2"/>
+<text x="666" y="151" text-anchor="start" font-size="30" font-weight="400" fill="#161616">1. Look up the account</text>
+<rect x="640" y="190" width="510" height="64" rx="14" fill="#F5F3F0" stroke="#CCC5B9" stroke-width="2"/>
+<text x="666" y="233" text-anchor="start" font-size="30" font-weight="400" fill="#161616">2. Apply the posting rule</text>
+<rect x="640" y="272" width="510" height="64" rx="14" fill="#F5F3F0" stroke="#CCC5B9" stroke-width="2"/>
+<text x="666" y="315" text-anchor="start" font-size="30" font-weight="400" fill="#161616">3. Record it in the ledger</text>
+<text x="895" y="400" text-anchor="middle" font-size="32" font-weight="700" fill="#161616">One right way.</text>
+<text x="895" y="448" text-anchor="middle" font-size="32" font-weight="700" fill="#161616">The same, every time.</text>
+</svg>

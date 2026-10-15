@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-labelledby="t d" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title id="t">Flexible inputs, constrained steps, repeatable outcome</title><desc id="d">Three boxes joined by arrows. Flexible inputs: any wording, any document. Constrained steps, highlighted: small jobs and set formats. Repeatable outcome: the same shape on every run.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#161616"/></marker></defs>
+<rect width="1200" height="340" fill="#F5F3F0"/>
+<rect x="10" y="20" width="350" height="300" rx="20" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="185.0" y="114" text-anchor="middle" font-size="44" font-weight="600" fill="#161616">Flexible</text>
+<text x="185.0" y="169" text-anchor="middle" font-size="44" font-weight="600" fill="#161616">inputs</text>
+<text x="185.0" y="228" text-anchor="middle" font-size="34" fill="#686868">any wording,</text>
+<text x="185.0" y="271" text-anchor="middle" font-size="34" fill="#686868">any document</text>
+<rect x="425" y="20" width="350" height="300" rx="20" fill="#FF5A50" stroke="#161616" stroke-width="3"/>
+<text x="600.0" y="114" text-anchor="middle" font-size="44" font-weight="600" fill="#161616">Constrained</text>
+<text x="600.0" y="169" text-anchor="middle" font-size="44" font-weight="600" fill="#161616">steps</text>
+<text x="600.0" y="228" text-anchor="middle" font-size="34" fill="#161616">small jobs,</text>
+<text x="600.0" y="271" text-anchor="middle" font-size="34" fill="#161616">set formats</text>
+<rect x="840" y="20" width="350" height="300" rx="20" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="1015.0" y="114" text-anchor="middle" font-size="44" font-weight="600" fill="#161616">Repeatable</text>
+<text x="1015.0" y="169" text-anchor="middle" font-size="44" font-weight="600" fill="#161616">outcome</text>
+<text x="1015.0" y="228" text-anchor="middle" font-size="34" fill="#686868">same shape,</text>
+<text x="1015.0" y="271" text-anchor="middle" font-size="34" fill="#686868">every run</text>
+<line x1="364" y1="170" x2="421" y2="170" stroke="#161616" stroke-width="5" marker-end="url(#a)"/>
+<line x1="779" y1="170" x2="836" y2="170" stroke="#161616" stroke-width="5" marker-end="url(#a)"/>
+</svg>
