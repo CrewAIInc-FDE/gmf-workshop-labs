@@ -1,7 +1,7 @@
 """Shared settings: the model and the workshop data connector.
 
-You don't need to edit this file. The OpenAI key is set once for the whole AMP organization,
-so it never appears in your project."""
+You don't need to edit this file. On AMP, your deployment gets OPENAI_API_KEY from an
+organization variable you link to it, so the key never appears in your project."""
 import os
 
 from crewai import LLM

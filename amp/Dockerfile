@@ -1,16 +1,25 @@
 # CrewAI workshop lab - dev container image
 #
 # Everything an attendee needs is baked in at build time: Python, uv, the CrewAI CLI and the
-# lab project with its dependencies. Nothing is downloaded when the container runs.
+# lab project with its dependencies. No packages are installed when the container runs.
+# Pinning: base images by digest; the lab project's dependencies by its uv.lock; the CrewAI CLI
+# at its top-level version (crewai==1.15.23).
 # Crews are never run locally in this container - they are deployed to CrewAI AMP and run there.
 #
 # Build:  docker buildx build --platform linux/amd64,linux/arm64 -t <registry>/crewai-workshop-lab:<tag> amp/
 # Start:  docker run -d --name crewai-lab --restart unless-stopped <registry>/crewai-workshop-lab:<tag>
 
-FROM python:3.12-slim
+FROM python:3.12-slim@sha256:a6e34c598f2467ed0e9a8d349809fcd8b5c603269512df273a0bb1784edc11b1
 
-# Optional: if your network re-signs HTTPS (TLS inspection), put your root CA in
-# amp/certs/ as a .crt file before building. The folder can stay empty otherwise.
+ARG REVISION=unknown
+LABEL org.opencontainers.image.title="CrewAI workshop lab" \
+      org.opencontainers.image.description="Dev container for the CrewAI Policy Q&A workshop lab" \
+      org.opencontainers.image.revision="${REVISION}"
+
+# Optional, build time only: if your network re-signs HTTPS, put your root CA in amp/certs/
+# as a .crt file so apt and git can fetch packages while building. The folder can stay empty.
+# The CrewAI CLI does not use this store: app.crewai.com and login.crewai.com need direct
+# access without TLS inspection.
 COPY certs/ /usr/local/share/ca-certificates/
 RUN apt-get update \
  && apt-get install -y --no-install-recommends ca-certificates git curl nano less \
@@ -18,7 +27,7 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
 
 # uv, pinned, copied from its official image
-COPY --from=ghcr.io/astral-sh/uv:0.11.19 /uv /uvx /usr/local/bin/
+COPY --from=ghcr.io/astral-sh/uv:0.11.19@sha256:b46b03ddfcfbf8f547af7e9eaefdf8a39c8cebcba7c98858d3162bd28cf536f6 /uv /uvx /usr/local/bin/
 
 # Non-root user that owns the lab
 RUN useradd --create-home --shell /bin/bash crew
@@ -47,7 +56,7 @@ RUN git config --global user.name "CrewAI lab" \
  && cd /home/crew/lab/policy_qa \
  && printf '.venv/\n__pycache__/\n*.pyc\n.env\n' > .gitignore \
  && git init -q && git add -A && git commit -qm "Lab starting point" \
- && printf '# Intentionally empty. The model key is set once for the whole AMP organization.\n' > .env
+ && printf '# Intentionally empty. On AMP, your deployment gets OPENAI_API_KEY from an organization variable you link to it.\n' > .env
 
 COPY --chown=crew:crew scripts/ /home/crew/scripts/
 RUN cat /home/crew/scripts/bashrc-snippet >> /home/crew/.bashrc
