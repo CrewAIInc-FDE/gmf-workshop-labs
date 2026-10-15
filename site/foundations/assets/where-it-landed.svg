@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1920" height="704" role="img" aria-labelledby="t d" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title id="t">Where the right policy landed, six questions</title><desc id="d">A table with six questions down the side and keyword, semantic and hybrid across the top. Each cell shows the rank of the right policy in the top three, or a dash if it was not returned. Late by a few days: 1, 1, 1. Deployed with the Army: dash, 1, 3. 84 months: 1, dash, 1. Lost my job: 1, dash, 1. Flooded in the hurricane: 3, 1, 3. Take my car: dash, dash, dash.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#161616"/></marker></defs>
+<rect width="1200" height="440" fill="#F5F3F0"/>
+<text x="560.0" y="40" text-anchor="middle" font-size="34" font-weight="700" fill="#161616">Keyword</text>
+<text x="820.0" y="40" text-anchor="middle" font-size="34" font-weight="700" fill="#161616">Semantic</text>
+<text x="1080.0" y="40" text-anchor="middle" font-size="34" font-weight="700" fill="#161616">Hybrid</text>
+<text x="0" y="100" text-anchor="start" font-size="30" font-weight="400" fill="#161616">Late by a few days</text>
+<rect x="440" y="60" width="240" height="54" rx="12" fill="#FF5A50" stroke="#161616" stroke-width="3"/>
+<text x="560.0" y="98" text-anchor="middle" font-size="32" font-weight="700" fill="#161616">#1</text>
+<rect x="700" y="60" width="240" height="54" rx="12" fill="#FF5A50" stroke="#161616" stroke-width="3"/>
+<text x="820.0" y="98" text-anchor="middle" font-size="32" font-weight="700" fill="#161616">#1</text>
+<rect x="960" y="60" width="240" height="54" rx="12" fill="#FF5A50" stroke="#161616" stroke-width="3"/>
+<text x="1080.0" y="98" text-anchor="middle" font-size="32" font-weight="700" fill="#161616">#1</text>
+<text x="0" y="162" text-anchor="start" font-size="30" font-weight="400" fill="#161616">Deployed with the Army</text>
+<rect x="440" y="122" width="240" height="54" rx="12" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="560.0" y="160" text-anchor="middle" font-size="32" font-weight="400" fill="#686868">not found</text>
+<rect x="700" y="122" width="240" height="54" rx="12" fill="#FF5A50" stroke="#161616" stroke-width="3"/>
+<text x="820.0" y="160" text-anchor="middle" font-size="32" font-weight="700" fill="#161616">#1</text>
+<rect x="960" y="122" width="240" height="54" rx="12" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="1080.0" y="160" text-anchor="middle" font-size="32" font-weight="400" fill="#161616">#3</text>
+<text x="0" y="224" text-anchor="start" font-size="30" font-weight="400" fill="#161616">"84 months"</text>
+<rect x="440" y="184" width="240" height="54" rx="12" fill="#FF5A50" stroke="#161616" stroke-width="3"/>
+<text x="560.0" y="222" text-anchor="middle" font-size="32" font-weight="700" fill="#161616">#1</text>
+<rect x="700" y="184" width="240" height="54" rx="12" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="820.0" y="222" text-anchor="middle" font-size="32" font-weight="400" fill="#686868">not found</text>
+<rect x="960" y="184" width="240" height="54" rx="12" fill="#FF5A50" stroke="#161616" stroke-width="3"/>
+<text x="1080.0" y="222" text-anchor="middle" font-size="32" font-weight="700" fill="#161616">#1</text>
+<text x="0" y="286" text-anchor="start" font-size="30" font-weight="400" fill="#161616">Lost my job</text>
+<rect x="440" y="246" width="240" height="54" rx="12" fill="#FF5A50" stroke="#161616" stroke-width="3"/>
+<text x="560.0" y="284" text-anchor="middle" font-size="32" font-weight="700" fill="#161616">#1</text>
+<rect x="700" y="246" width="240" height="54" rx="12" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="820.0" y="284" text-anchor="middle" font-size="32" font-weight="400" fill="#686868">not found</text>
+<rect x="960" y="246" width="240" height="54" rx="12" fill="#FF5A50" stroke="#161616" stroke-width="3"/>
+<text x="1080.0" y="284" text-anchor="middle" font-size="32" font-weight="700" fill="#161616">#1</text>
+<text x="0" y="348" text-anchor="start" font-size="30" font-weight="400" fill="#161616">Flooded in the hurricane</text>
+<rect x="440" y="308" width="240" height="54" rx="12" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="560.0" y="346" text-anchor="middle" font-size="32" font-weight="400" fill="#161616">#3</text>
+<rect x="700" y="308" width="240" height="54" rx="12" fill="#FF5A50" stroke="#161616" stroke-width="3"/>
+<text x="820.0" y="346" text-anchor="middle" font-size="32" font-weight="700" fill="#161616">#1</text>
+<rect x="960" y="308" width="240" height="54" rx="12" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="1080.0" y="346" text-anchor="middle" font-size="32" font-weight="400" fill="#161616">#3</text>
+<text x="0" y="410" text-anchor="start" font-size="30" font-weight="400" fill="#161616">Take my car</text>
+<rect x="440" y="370" width="240" height="54" rx="12" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="560.0" y="408" text-anchor="middle" font-size="32" font-weight="400" fill="#686868">not found</text>
+<rect x="700" y="370" width="240" height="54" rx="12" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="820.0" y="408" text-anchor="middle" font-size="32" font-weight="400" fill="#686868">not found</text>
+<rect x="960" y="370" width="240" height="54" rx="12" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="1080.0" y="408" text-anchor="middle" font-size="32" font-weight="400" fill="#686868">not found</text>
+</svg>

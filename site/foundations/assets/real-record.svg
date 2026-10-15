@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" width="1920" height="752" role="img" aria-labelledby="t d" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title id="t">One real record in the store</title><desc id="d">A card showing the real record for policy POL-101. Five fields: id POL-101; title Payment Deferral and Extension Policy; category Hardship and Collections; effective date 2025-01-01; and text, the whole policy, about 280 words. Below, a separate row: the embedding, 384 numbers made by the model BAAI bge-small-en-v1.5, starting minus 0.0377, minus 0.0155, 0.0031, 0.0185, 0.0072.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#161616"/></marker></defs>
+<rect width="1200" height="470" fill="#F5F3F0"/>
+<rect x="0" y="6" width="1200" height="58" rx="12" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="20" y="46" text-anchor="start" font-size="28" font-weight="700" fill="#686868">id</text>
+<text x="300" y="46" text-anchor="start" font-size="30" font-weight="400" fill="#161616">POL-101</text>
+<rect x="0" y="70" width="1200" height="58" rx="12" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="20" y="110" text-anchor="start" font-size="28" font-weight="700" fill="#686868">title</text>
+<text x="300" y="110" text-anchor="start" font-size="30" font-weight="400" fill="#161616">Payment Deferral and Extension Policy</text>
+<rect x="0" y="134" width="1200" height="58" rx="12" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="20" y="174" text-anchor="start" font-size="28" font-weight="700" fill="#686868">category</text>
+<text x="300" y="174" text-anchor="start" font-size="30" font-weight="400" fill="#161616">Hardship and Collections</text>
+<rect x="0" y="198" width="1200" height="58" rx="12" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="20" y="238" text-anchor="start" font-size="28" font-weight="700" fill="#686868">effective_date</text>
+<text x="300" y="238" text-anchor="start" font-size="30" font-weight="400" fill="#161616">2025-01-01</text>
+<rect x="0" y="262" width="1200" height="58" rx="12" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="20" y="302" text-anchor="start" font-size="28" font-weight="700" fill="#686868">text</text>
+<text x="300" y="302" text-anchor="start" font-size="30" font-weight="400" fill="#161616">Northwind Auto Finance may grant a payment deferral of up ...</text>
+<rect x="0" y="336" width="1200" height="128" rx="16" fill="#FF5A50" stroke="#161616" stroke-width="4"/>
+<text x="20" y="380" text-anchor="start" font-size="28" font-weight="700" fill="#161616">embedding</text>
+<text x="300" y="380" text-anchor="start" font-size="30" font-weight="600" fill="#161616">384 numbers, made by BAAI/bge-small-en-v1.5</text>
+<text x="300" y="432" text-anchor="start" font-size="32" font-weight="400" fill="#161616">[ -0.0377, -0.0155, 0.0031, 0.0185, 0.0072, ... ]</text>
+</svg>

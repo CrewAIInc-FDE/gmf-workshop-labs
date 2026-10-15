@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1920" height="640" role="img" aria-labelledby="t d" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title id="t">84 months, top three per mode</title><desc id="d">Three columns of top-three results. Keyword: Payment Deferral 0.09 highlighted, Lease-End 0.055, Electronic Payments 0.043. Semantic: Refinancing 0.551, Lease-End 0.546, Natural Disaster 0.546, and Payment Deferral is not returned. Hybrid: Payment Deferral 0.76 highlighted, Lease-End 0.576, Electronic Payments 0.498.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#161616"/></marker></defs>
+<rect width="1200" height="400" fill="#F5F3F0"/>
+<text x="193.0" y="40" text-anchor="middle" font-size="36" font-weight="700" fill="#161616">Keyword</text>
+<rect x="0" y="60" width="386" height="98" rx="14" fill="#FF5A50" stroke="#161616" stroke-width="4"/>
+<text x="18" y="100" text-anchor="start" font-size="30" font-weight="600" fill="#161616">Payment Deferral</text>
+<text x="18" y="138" text-anchor="start" font-size="28" font-weight="400" fill="#161616">POL-101  0.09</text>
+<rect x="0" y="170" width="386" height="98" rx="14" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="18" y="210" text-anchor="start" font-size="30" font-weight="600" fill="#161616">Lease-End</text>
+<text x="18" y="248" text-anchor="start" font-size="28" font-weight="400" fill="#686868">POL-105  0.055</text>
+<rect x="0" y="280" width="386" height="98" rx="14" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="18" y="320" text-anchor="start" font-size="30" font-weight="600" fill="#161616">Electronic Payments</text>
+<text x="18" y="358" text-anchor="start" font-size="28" font-weight="400" fill="#686868">POL-113  0.043</text>
+<text x="599.0" y="40" text-anchor="middle" font-size="36" font-weight="700" fill="#161616">Semantic</text>
+<rect x="406" y="60" width="386" height="98" rx="14" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="424" y="100" text-anchor="start" font-size="30" font-weight="600" fill="#161616">Refinancing</text>
+<text x="424" y="138" text-anchor="start" font-size="28" font-weight="400" fill="#686868">POL-109  0.551</text>
+<rect x="406" y="170" width="386" height="98" rx="14" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="424" y="210" text-anchor="start" font-size="30" font-weight="600" fill="#161616">Lease-End</text>
+<text x="424" y="248" text-anchor="start" font-size="28" font-weight="400" fill="#686868">POL-105  0.546</text>
+<rect x="406" y="280" width="386" height="98" rx="14" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="424" y="320" text-anchor="start" font-size="30" font-weight="600" fill="#161616">Natural Disaster</text>
+<text x="424" y="358" text-anchor="start" font-size="28" font-weight="400" fill="#686868">POL-115  0.546</text>
+<text x="1005.0" y="40" text-anchor="middle" font-size="36" font-weight="700" fill="#161616">Hybrid</text>
+<rect x="812" y="60" width="386" height="98" rx="14" fill="#FF5A50" stroke="#161616" stroke-width="4"/>
+<text x="830" y="100" text-anchor="start" font-size="30" font-weight="600" fill="#161616">Payment Deferral</text>
+<text x="830" y="138" text-anchor="start" font-size="28" font-weight="400" fill="#161616">POL-101  0.76</text>
+<rect x="812" y="170" width="386" height="98" rx="14" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="830" y="210" text-anchor="start" font-size="30" font-weight="600" fill="#161616">Lease-End</text>
+<text x="830" y="248" text-anchor="start" font-size="28" font-weight="400" fill="#686868">POL-105  0.576</text>
+<rect x="812" y="280" width="386" height="98" rx="14" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="830" y="320" text-anchor="start" font-size="30" font-weight="600" fill="#161616">Electronic Payments</text>
+<text x="830" y="358" text-anchor="start" font-size="28" font-weight="400" fill="#686868">POL-113  0.498</text>
+</svg>

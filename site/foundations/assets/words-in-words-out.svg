@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1920" height="704" role="img" aria-labelledby="t d" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title id="t">Words in, words out</title><desc id="d">Three boxes joined by arrows. Left: your words, such as a question or a document. Middle: the language model, which has read an enormous amount of text. Right: words out, the most likely useful continuation, written one small piece at a time. Below: nothing is looked up along the way.</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#161616"/></marker></defs>
+<rect width="1200" height="440" fill="#F5F3F0"/>
+<rect x="20" y="70" width="300" height="200" rx="18" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="170" y="150" text-anchor="middle" font-size="36" font-weight="600" fill="#161616">Your words</text>
+<text x="170" y="195" text-anchor="middle" font-size="30" font-weight="400" fill="#686868">a question,</text>
+<text x="170" y="232" text-anchor="middle" font-size="30" font-weight="400" fill="#686868">a document</text>
+<rect x="450" y="70" width="300" height="200" rx="18" fill="#FF5A50" stroke="#161616" stroke-width="3"/>
+<text x="600" y="150" text-anchor="middle" font-size="36" font-weight="600" fill="#161616">The model</text>
+<text x="600" y="195" text-anchor="middle" font-size="30" font-weight="400" fill="#161616">has read a huge</text>
+<text x="600" y="232" text-anchor="middle" font-size="30" font-weight="400" fill="#161616">amount of text</text>
+<rect x="880" y="70" width="300" height="200" rx="18" fill="#EDEDED" stroke="#CCC5B9" stroke-width="3"/>
+<text x="1030" y="150" text-anchor="middle" font-size="36" font-weight="600" fill="#161616">Words out</text>
+<text x="1030" y="195" text-anchor="middle" font-size="30" font-weight="400" fill="#686868">the likely useful</text>
+<text x="1030" y="232" text-anchor="middle" font-size="30" font-weight="400" fill="#686868">continuation</text>
+<line x1="325" y1="170" x2="445" y2="170" stroke="#161616" stroke-width="5" marker-end="url(#a)"/>
+<line x1="755" y1="170" x2="875" y2="170" stroke="#161616" stroke-width="5" marker-end="url(#a)"/>
+<text x="600" y="340" text-anchor="middle" font-size="34" font-weight="600" fill="#161616">It writes one small piece at a time.</text>
+<text x="600" y="395" text-anchor="middle" font-size="32" font-weight="400" fill="#686868">Nothing is looked up. It continues the pattern.</text>
+</svg>
