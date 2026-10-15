@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640" role="img" aria-labelledby="t d">
+<title id="t">How the lab fits together</title><desc id="d">Diagram: on your laptop, a dev container with VS Code and the CrewAI CLI sends your project to CrewAI AMP in the cloud with the crewai deploy command, and your browser opens the AMP run form; your deployment runs the crew in AMP, with the model key linked from the organization, and calls the Northwind data connector (MCP) for tools. Nothing runs on the laptop.</desc>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#161616"/></marker>
+<marker id="ac" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#FF5A50"/></marker>
+</defs>
+<rect width="1200" height="640" fill="#F5F3F0"/>
+<rect x="24" y="24" width="336" height="592" rx="18" fill="#F5F3F0" stroke="#686868" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="44" y="62" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#161616" text-anchor="start">YOUR LAPTOP</text>
+<text x="44" y="88" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#686868" text-anchor="start">You edit and click here.</text>
+<text x="44" y="110" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="700" fill="#161616" text-anchor="start">No crew ever runs here.</text>
+<rect x="44" y="140" width="296" height="200" rx="14" fill="#EDEDED" stroke="#CCC5B9" stroke-width="2"/>
+<text x="64" y="178" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#161616" text-anchor="start">Dev container</text>
+<text x="64" y="212" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" fill="#161616" text-anchor="start">VS Code attached</text>
+<text x="64" y="240" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" fill="#161616" text-anchor="start">CrewAI CLI</text>
+<text x="64" y="268" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" fill="#161616" text-anchor="start">Your project files</text>
+<rect x="44" y="400" width="296" height="150" rx="14" fill="#EDEDED" stroke="#CCC5B9" stroke-width="2"/>
+<text x="64" y="438" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#161616" text-anchor="start">Browser</text>
+<text x="64" y="472" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" fill="#161616" text-anchor="start">app.crewai.com</text>
+<text x="64" y="500" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" fill="#161616" text-anchor="start">You open the run form</text>
+<rect x="520" y="24" width="656" height="592" rx="18" fill="#F5F3F0" stroke="#161616" stroke-width="2"/>
+<text x="544" y="62" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#161616" text-anchor="start">CREWAI AMP (CLOUD)</text>
+<rect x="560" y="140" width="260" height="200" rx="14" fill="#FF5A50" stroke="#161616" stroke-width="2"/>
+<text x="580" y="178" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#161616" text-anchor="start">Your deployment</text>
+<text x="580" y="212" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#161616" text-anchor="start">Your crew runs here</text>
+<text x="580" y="248" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" fill="#161616" text-anchor="start">Model key: linked</text>
+<text x="580" y="272" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" fill="#161616" text-anchor="start">from the org</text>
+<rect x="920" y="140" width="232" height="200" rx="14" fill="#EDEDED" stroke="#CCC5B9" stroke-width="2"/>
+<text x="940" y="178" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#161616" text-anchor="start">Northwind data</text>
+<text x="940" y="204" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#161616" text-anchor="start">connector (MCP)</text>
+<text x="940" y="242" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" fill="#161616" text-anchor="start">Policies, inbox,</text>
+<text x="940" y="268" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" fill="#161616" text-anchor="start">accounts</text>
+<rect x="560" y="400" width="260" height="150" rx="14" fill="#EDEDED" stroke="#CCC5B9" stroke-width="2"/>
+<text x="580" y="438" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="22" font-weight="700" fill="#161616" text-anchor="start">AMP run form</text>
+<text x="580" y="472" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" fill="#161616" text-anchor="start">You type {question}</text>
+<text x="580" y="500" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="18" font-weight="400" fill="#161616" text-anchor="start">and click Run</text>
+<line x1="340" y1="240" x2="556" y2="240" stroke="#161616" stroke-width="3" marker-end="url(#a)"/>
+<text x="440" y="216" font-family="'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="16" font-weight="700" fill="#161616" text-anchor="middle">crewai deploy</text>
+<line x1="340" y1="475" x2="556" y2="475" stroke="#161616" stroke-width="3" marker-end="url(#a)"/>
+<text x="440" y="451" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#161616" text-anchor="middle">open the form</text>
+<line x1="690" y1="396" x2="690" y2="344" stroke="#161616" stroke-width="3" marker-end="url(#a)"/>
+<text x="706" y="376" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#161616" text-anchor="start">starts a run</text>
+<line x1="820" y1="240" x2="916" y2="240" stroke="#161616" stroke-width="3" marker-end="url(#a)"/>
+<text x="868" y="216" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#161616" text-anchor="middle">tools</text>
+<text x="544" y="592" font-family="Inter, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="400" fill="#161616" text-anchor="start">The crew runs in the cloud. Your laptop is only for editing and clicking.</text>
+</svg>
