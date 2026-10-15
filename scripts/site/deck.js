@@ -74,9 +74,21 @@
       el.requestFullscreen().then(function () { enteredFullscreen = true; }, function () {});
     }
   }
+  var blank = document.createElement('div');
+  blank.className = 'blank-screen'; blank.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(blank);
+  function setBlank(kind) {
+    var cur_ = blank.classList.contains('white') ? 'w' : blank.classList.contains('on') ? 'b' : '';
+    var next = cur_ === kind ? '' : kind;
+    blank.classList.toggle('on', !!next);
+    blank.classList.toggle('white', next === 'w');
+  }
+  function unblank() { blank.classList.remove('on', 'white'); }
+
   function exitPresent() {
     if (!presenting) return;
     presenting = false;
+    unblank();
     clearBuf();
     document.body.classList.remove('presenting');
     if (document.fullscreenElement && document.exitFullscreen) { enteredFullscreen = false; document.exitFullscreen().catch(function () {}); }
@@ -119,6 +131,10 @@
     if (k === 'p' || k === 'P') { e.preventDefault(); if (presenting) exitPresent(); else enterPresent(); return; }
     if (k === 's' || k === 'S') { e.preventDefault(); openSpeaker(); return; }
     if (!presenting) return;
+    if (k === 'b' || k === 'B' || k === '.') { e.preventDefault(); setBlank('b'); return; }
+    if (k === 'w' || k === 'W') { e.preventDefault(); setBlank('w'); return; }
+    if (k === 'Escape' && blank.classList.contains('on')) { e.preventDefault(); unblank(); return; }
+    if (blank.classList.contains('on')) unblank();
     if (k >= '0' && k <= '9' && k.length === 1) { e.preventDefault(); pushDigit(k); return; }
     if (k === 'Enter') {
       e.preventDefault();

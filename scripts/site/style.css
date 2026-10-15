@@ -619,8 +619,17 @@ body.notes-page { background: #fff; font-size: 18px; padding-bottom: 7.5rem; }
 }
 .nbar .go { min-height: 64px; width: auto; padding: 0 1.1rem; font-size: 1.2rem; }
 .nfollow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.05rem; min-height: 44px; }
+.nmode { border: 0; margin: 0; padding: 0; display: inline-flex; flex-wrap: wrap; align-items: center; gap: 0.2rem 1rem; }
+.nmode legend { float: left; padding: 0; margin-right: 0.6rem; }
+.nmode label { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.05rem; min-height: 44px; }
+.nmode input { width: 26px; height: 26px; accent-color: var(--coal); }
 .nfollow input { width: 26px; height: 26px; accent-color: var(--coal); }
 body.follow-mode .ncard:not(.is-current) { display: none; }
 body.follow-mode .ncard .nmini { flex-basis: min(440px, 100%); }
 body.follow-mode .ncard .nbody { font-size: 1.5rem; }
 @media (max-width: 640px) { .nbar .inner { grid-template-columns: 1fr 1fr; } .nbar .jump { grid-column: 1 / -1; justify-content: center; order: -1; } }
+
+/* clicker blank screen (present mode) */
+.blank-screen { display: none; }
+body.presenting .blank-screen.on { display: block; position: fixed; inset: 0; z-index: 80; background: #000; }
+body.presenting .blank-screen.on.white { background: #fff; }

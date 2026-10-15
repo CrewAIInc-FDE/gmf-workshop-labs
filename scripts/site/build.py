@@ -373,7 +373,7 @@ def main() -> int:
                 '<div class="deck-bar">'
                 '<button type="button" class="btn" id="present-btn">Present <kbd>P</kbd></button>'
                 '<button type="button" class="btn alt" id="speaker-btn">Speaker view <kbd>S</kbd></button>'
-                '<p class="deck-hint">Present mode: arrow keys, space, or PageUp/PageDown to move; type a number then Enter to jump; Esc to exit. '
+                '<p class="deck-hint">Present mode: arrow keys, space, or PageUp/PageDown to move; type a number then Enter to jump; B or . blanks the screen to black, W to white (press again to return); Esc to exit. '
                 'Open the speaker view first, then present.</p></div>'
                 f'<div class="deck" id="deck" data-module="{html.escape(out.parent.name)}" data-notes-url="notes/">\n{cards}\n</div>'
                 '<div class="sr-only" id="live" aria-live="polite"></div>'
