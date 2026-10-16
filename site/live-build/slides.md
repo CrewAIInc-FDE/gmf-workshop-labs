@@ -14,7 +14,7 @@ Morning module, 11:10 to 11:25 CT. One presenter drives CrewAI Studio on the big
 - Check the connection once: Studio should offer the "Northwind Workshop Data" connection with the tools `search_policies` and `get_policy`. If the tool shows without a green check, tell a facilitator now, not live.
 - Pre-deployed fallback automation (built on the Flows path) is ready and its run form is open in a second tab: "<fallback crew name TBD>".
 - Paste buffer ready (the prompt and the question, see the next slide's notes). In Studio, the dropdown next to the arrow starts on Crews: practice selecting Flows once.
-- <!-- SHOT: Studio home with "Describe your automation" box and the dropdown open, Flows highlighted -->
+- Reference screenshot (dropdown open, Flows ticked): [Studio home](../assets/live-build-01-studio-flows-dropdown.png). On 2026-10-16 the dropdown already started on Flows in our organization, so it may not need changing. Check anyway.
 
 **Say, at 11:10**
 - Okay, so let's actually build one. I am going to describe a team of agents in plain English, and Studio builds it. Not a single line of code.
@@ -27,6 +27,7 @@ Morning module, 11:10 to 11:25 CT. One presenter drives CrewAI Studio on the big
 
 @slide Describe it, run it, read the trace
 @idea Plain English in. A crew on the canvas. A trace of every step.
+@image assets/live-build-04-flow-canvas.png | Studio canvas showing a Trigger card connected to one step, Answer Policy Question Crew, described as 2 agents across 2 tasks with the Northwind Workshop Data app attached.
 - Mode: Flows
 - Describe it, press the arrow, confirm the plan
 - Click Run, type a question, Execute
@@ -43,7 +44,7 @@ Build a crew for Northwind Auto Finance, a fictional auto lender, with two agent
 
 4. Studio Assistant shows a plan after about 6 seconds: six short steps (receive the question, draft the answer, answer rules, handle gaps, compliance review, final answer with review notes) and "Does this look correct?". Read two of the steps aloud, then click **Yes, this is correct**. If you forget, nothing happens: that is the most common stall.
 - Studio then builds for about 50 seconds ("Built 1 step"). A welcome tour pop-up may appear on a first project: click Next through it or close it. Names will differ slightly from the lab screenshots, that is fine.
-- <!-- SHOT: the prompt pasted in the box, Flows selected, then the plan with the Yes, this is correct button -->
+- Reference screenshots: [the prompt pasted in the box with Flows selected](../assets/live-build-02-prompt-in-box.png), then [the plan with the Yes, this is correct button](../assets/live-build-03-plan-confirm.png).
 
 **What to say while it generates (about 60 to 90 seconds - do not sit in silence)**
 - This is the part that used to take a developer a day. I described a team and a job. Studio is turning that into agents and tasks.
@@ -55,7 +56,7 @@ Build a crew for Northwind Auto Finance, a fictional auto lender, with two agent
 - Click the step to open the crew: a draft task and a review task, each with its agent and **Apps: Northwind Workshop Data**. Click an agent: Task, Profile (role, goal, backstory), Model, Apps. The reviewer should list `get_policy` only. Point at that: the reviewer cannot search, it can only re-read. That is a scoped tool. (If Studio gave the reviewer more tools, say so and move on.)
 - Read the step's Output out loud: "at most 120 words, cites by policy id".
 - Point at `${state.question}` in the task: that is the input. One automation, any question.
-- <!-- SHOT: the flow canvas with the Trigger card and the "2 agents across 2 tasks" step, then the crew opened with both tasks -->
+- Reference screenshots: the flow canvas with the Trigger card and the "2 agents across 2 tasks" step is the picture on this slide. After you open the step, [the crew with both tasks](../assets/live-build-05-crew-two-tasks.png).
 - If the canvas shows two separate steps instead of one crew step, that is fine: the first output still feeds the reviewer. If it shows only one agent, or the agent has no Apps line: do not debug live. Go to the fallback (see the last slide's notes for the exact switch).
 
 **Likely question:** "Where does it get the policies?" Short answer: from a data connector, a standard plug called MCP. It is already set up as "Northwind Workshop Data". Agents only get the tools you hand them.
@@ -63,6 +64,7 @@ Build a crew for Northwind Auto Finance, a fictional auto lender, with two agent
 
 @slide Run it, and watch what it does
 @idea The crew runs in the cloud. Every step lands in a timeline you can inspect.
+@image assets/live-build-08-output-review-notes.png | Studio Output tab for a finished run: the Answer Policy Question step with its Review Answer task opened. The answer says a customer enrolled in the Natural Disaster Hardship Program will not be charged a late fee, cites POL-115 and POL-102, and ends with a Review notes line.
 - Question in: a late-fee question after a disaster
 - Agent 1 searches, reads, drafts a cited answer
 - Agent 2 re-reads each policy and corrects
@@ -77,7 +79,7 @@ A customer in a declared disaster area missed a payment last week. Will they be 
 ```
 
 3. Click **Execute**.
-- <!-- SHOT: Run parameters dialog with the question filled in -->
+- Reference screenshot: [Run parameters dialog with the question filled in](../assets/live-build-06-run-parameters.png).
 
 **What to say while it runs (about 2 to 4 minutes)**
 - It is running in AMP, in the cloud. My laptop is not doing the work. If I closed it right now, the run would keep going. That is the hosted part.
@@ -85,20 +87,21 @@ A customer in a declared disaster area missed a payment last week. Will they be 
 - Then the second agent: "Now the reviewer. It is re-reading each policy that the first answer cited, and checking the numbers."
 - Tie it back to the RAG slide: the search step is RAG, used as one tool. The agent chose when to call it. The reviewer is the check.
 - Constraining agency, third time: "Notice nobody told it which tool to use in which order. It reasoned about that. But the shape of the result, the length, the citation, the Review notes line, was fixed."
-- <!-- SHOT: Traces tab with the Flow Timeline showing search_policies and get_policy calls -->
+- Reference screenshot: [Traces tab, Flow Timeline with the search_policies and get_policy calls](../assets/live-build-07-traces-timeline.png). In our rehearsal runs the last get_policy row sometimes carries a red ERROR tag even though the run completes and the answer is fine. If someone asks, say the timeline shows everything, including noise, and the final answer is what counts.
 
 **Expected output (about; confirm in rehearsal)**
 - The final answer should say that a late fee is not charged once the customer is enrolled in the Natural Disaster Hardship Program, that they enroll by asking within 120 days of the declaration, and cite `(POL-115)` and likely `(POL-102)` for the late-fee rule. It stays under about 120 words.
 - It ends with a line starting `Review notes:` saying what the reviewer changed, or `none`.
 - Go to the **Output** tab, open the review task, and click **Raw** so the lines stay apart. The reviewer's output is the final answer. In our runs the Review notes line was `none` in some runs and a short correction in others (for example a corrected lease deferral limit). Both are right: say so.
-- <!-- SHOT: Output tab with the review task open, showing the answer and the Review notes line -->
+- Reference screenshot: [Output tab with the review task open, showing the answer and the Review notes line](../assets/live-build-08-output-review-notes.png). This is the picture on this slide.
 - Read the answer aloud, then ask the room: "Could you check this? Which policy is it based on?" They can: that is the point of the citation.
 
-**Timing marks (observed in rehearsal, 2026-10-16):** plan appears in about 6 seconds, build takes about 50 seconds, a run takes 20 to 25 seconds. Typed and running by 11:16. If it is not done by 11:21, stop narrating a spinner and move to the fallback. One of our three rehearsal runs answered that the policy library returned nothing, and took over 90 seconds: if that happens, click Run again once rather than debugging; if that run also fails, go to the fallback.
+**Timing marks (observed in rehearsal, 2026-10-16):** plan appears in about 6 seconds, build takes about 25 to 50 seconds (23 seconds in the screenshot rehearsal), a run takes 20 to 25 seconds (19.5 to 21 seconds as reported by Studio, about 25 seconds from Execute to done, longer on a slow run). Typed and running by 11:16. If it is not done by 11:21, stop narrating a spinner and move to the fallback. One of our three rehearsal runs answered that the policy library returned nothing, and took over 90 seconds: if that happens, click Run again once rather than debugging; if that run also fails, go to the fallback.
 
 **Fallback (if Studio is slow or builds something odd)**
 - Say: "Studio is a live system, so let me show you one I built earlier." Do not apologise at length.
 - Switch to the second tab: the pre-deployed automation "<fallback crew name TBD>". Open it in AMP, go to the **Run** tab (the flow is drawn as a diagram), click **Run Flow**, paste the same question under **Input Parameters**, click **Run Flow** again, and narrate the trace exactly as above. Results appear under **Executions** after about 15 to 20 seconds; open **Final Output** and read the text after `{"raw" =>`.
+- If both live runs fail, show the saved screenshots of one completed run: [Output](../assets/fallback-1-output.png), [Output with both tasks open](../assets/fallback-2-output-both-tasks.png), [Traces timeline](../assets/fallback-3-traces-timeline.png), [a trace event opened](../assets/fallback-4-trace-detail.png). Narrate them the same way.
 - If the fallback run also fails or hangs, do not retry: switch to the third tab, the fallback's completed execution from the day before, and narrate its **Final Output** and **Traces** the same way. The rule is one retry, then the fallback, then the saved execution.
 - TODO: name of the pre-deployed fallback crew is to be decided. Fill it in here and in the first slide's notes.
 - If it is only slow at the start (no plan, or nothing on the canvas after about 90 seconds): talk through the five things on the previous slide while it works, and switch if it is still empty at 11:14.
