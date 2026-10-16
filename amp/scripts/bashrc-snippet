@@ -1,10 +1,11 @@
 
 # --- CrewAI workshop lab ---
 export PATH="$HOME/.local/bin:$PATH"
-cd /home/crew/lab/policy_qa 2>/dev/null
 echo
-echo "  CrewAI workshop lab - Policy Q&A on AMP"
-echo "  You are in: $(pwd)"
+echo "  CrewAI workshop labs"
+echo "  Labs:  policy_qa   intake_triage   renewal_prep   bring_your_own"
+echo "  Start: cd ~/lab/<lab>      (finished versions: ~/lab/solutions/<lab>)"
+echo "  After deploy create: export CREWAI_DEPLOYMENT_ID (policy_qa), INTAKE_TRIAGE_DEPLOYMENT_ID, RENEWAL_PREP_DEPLOYMENT_ID, BYO_DEPLOYMENT_ID"
 echo "  CrewAI CLI: $(crewai --version 2>/dev/null)"
 echo "  Next: crewai login   (the lab page has every step)"
 echo

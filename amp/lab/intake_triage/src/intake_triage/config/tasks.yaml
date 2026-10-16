@@ -1,0 +1,9 @@
+triage_document:
+  description: >
+    Read inbox document {doc_id} with get_inbox_document. Work out what kind of
+    document it is, pull out the customer name, the account id and what the sender
+    is asking for, and recommend which work queue should handle it
+    (list_routing_queues shows the options).
+  expected_output: >
+    A short summary: what the document is, who sent it, and the queue you recommend.
+  agent: intake_clerk

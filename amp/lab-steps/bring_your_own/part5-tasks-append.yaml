@@ -1,0 +1,14 @@
+
+check_answer:
+  description: >
+    The previous task's answer is your context. Check it against the original request: {request}
+    Step 1: re-check each fact, number and citation in that answer with your tools. Call the
+    calculator tool again with the same inputs and compare. Do not do any arithmetic yourself.
+    Step 2: if a fact, number or citation does not match, correct just that value. Leave everything
+    else exactly as written. Do not add new content, change the format, or write a reply to anyone.
+  expected_output: >
+    The previous answer, line for line in the same format, with any corrected values, followed by a
+    last line that starts with "Check notes:" and says what you changed, or "none".
+  agent: checker
+  context:
+    - do_the_work

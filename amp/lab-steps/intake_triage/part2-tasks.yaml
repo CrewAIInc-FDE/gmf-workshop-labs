@@ -1,0 +1,23 @@
+triage_document:
+  description: >
+    Read inbox document {doc_id} with get_inbox_document and list the work queues
+    with list_routing_queues. Extract the customer name, the account id (write
+    "missing" if the document has none) and the request type. Choose exactly one
+    queue. A complaint or notice that mentions a regulator, discrimination, fraud,
+    legal action or bankruptcy goes to compliance_escalation, whatever else it asks
+    for. A document that is itself suspicious goes to fraud_review, and one meant for
+    another company goes to misrouted. Set the urgency: high if the document mentions
+    a regulator, legal action, a deadline, a lapse or a repossession; low if it is a
+    routine update with no deadline; otherwise normal. Give a one-sentence reason that
+    names the queue rule you applied and quotes the words in the document that
+    triggered it.
+  expected_output: >
+    Exactly these seven lines and nothing else:
+    Doc: the document id
+    Customer: the customer name
+    Account: the account id, or "missing"
+    Request: the request type in a few words
+    Queue: one queue name from list_routing_queues
+    Urgency: high, normal or low
+    Reason: one sentence naming the rule and quoting the document
+  agent: intake_clerk

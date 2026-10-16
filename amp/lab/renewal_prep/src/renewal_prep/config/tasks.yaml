@@ -1,0 +1,10 @@
+draft_renewal_outreach:
+  description: >
+    List the agreements that expire within {within_days} days of {as_of} with
+    list_expiring_agreements, and check that account {account_id} is on the list.
+    Then read that account with get_client_account, including its payment history,
+    and draft a renewal outreach message to the customer in their preferred contact
+    channel.
+  expected_output: >
+    A short outreach message.
+  agent: renewal_specialist

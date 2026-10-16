@@ -1,0 +1,44 @@
+"""Policy Q&A crew. The agents and tasks are described in config/agents.yaml and config/tasks.yaml."""
+from crewai import Agent, Crew, Process, Task
+from crewai.agents.agent_builder.base_agent import BaseAgent
+from crewai.project import CrewBase, agent, crew, task
+
+from policy_qa.common import connector, llm
+
+
+@CrewBase
+class PolicyQACrew:
+    agents: list[BaseAgent]
+    tasks: list[Task]
+
+    @agent
+    def policy_assistant(self) -> Agent:
+        return Agent(
+            config=self.agents_config["policy_assistant"],  # type: ignore[index]
+            llm=llm(),
+            mcps=[connector()],
+            max_iter=12,
+            verbose=True,
+        )
+
+    @agent
+    def policy_reviewer(self) -> Agent:
+        return Agent(
+            config=self.agents_config["policy_reviewer"],  # type: ignore[index]
+            llm=llm(),
+            mcps=[connector()],
+            max_iter=12,
+            verbose=True,
+        )
+
+    @task
+    def answer_question(self) -> Task:
+        return Task(config=self.tasks_config["answer_question"])  # type: ignore[index]
+
+    @task
+    def review_answer(self) -> Task:
+        return Task(config=self.tasks_config["review_answer"])  # type: ignore[index]
+
+    @crew
+    def crew(self) -> Crew:
+        return Crew(agents=self.agents, tasks=self.tasks, process=Process.sequential, verbose=True)

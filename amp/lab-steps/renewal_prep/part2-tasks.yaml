@@ -1,0 +1,20 @@
+draft_renewal_outreach:
+  description: >
+    List the agreements that expire within {within_days} days of {as_of} with
+    list_expiring_agreements, and check that account {account_id} is on the list.
+    Then read that account with get_client_account, including its payment history.
+    Put the customer in exactly one segment: Good standing (no more than 1 late
+    payment in the last 12 months and nothing past due), Watch (2 or more late
+    payments in the last 12 months, nothing past due), or Past due (any amount
+    past due). Draft a renewal outreach message in the customer's preferred contact
+    channel, with the tone that matches the segment. Good standing: warm and
+    appreciative, and thank them for paying reliably. Watch: friendly and practical,
+    with no comment on their payment record. Past due: calm and respectful, with no
+    sales pitch, and invite them to call so the account can be brought current.
+  expected_output: >
+    Exactly these three parts and nothing else:
+    Segment: the segment, then " - " and one sentence that cites the payment history
+    Channel: email, phone or mail
+    Message: the outreach message (an email gets a subject line, a phone customer
+    gets a short call script, mail gets a short letter)
+  agent: renewal_specialist

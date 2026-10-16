@@ -1,0 +1,15 @@
+
+route_to_queue:
+  description: >
+    Route inbox document {doc_id}. Re-read it with get_inbox_document and check the
+    clerk's queue and urgency against list_routing_queues. Correct anything the
+    document doesn't support, and leave everything else exactly as the clerk wrote it,
+    including the quoted Reason. Then call route_document once with the doc id, the
+    queue, the one-sentence reason and the urgency.
+  expected_output: >
+    The clerk's seven lines (Doc, Customer, Account, Request, Queue, Urgency, Reason),
+    corrected if needed, then a line "Routing status:" with the status that
+    route_document returned, then a line "Review notes:" saying what you changed, or
+    "none".
+  agent: queue_router
+  context: [triage_document]

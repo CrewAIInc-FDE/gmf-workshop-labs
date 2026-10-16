@@ -3,3 +3,5 @@
 **/*.pyc
 .devcontainer
 README.md
+byo-files/make_byo_files.py
+**/.git

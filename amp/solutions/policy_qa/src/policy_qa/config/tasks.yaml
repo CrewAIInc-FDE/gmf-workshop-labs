@@ -1,0 +1,20 @@
+answer_question:
+  description: >
+    Answer this question from a customer service agent: {question}
+    Search the policy library first. Cite every rule you use by its policy id,
+    like (POL-101). Include any exceptions that apply. If the policies don't
+    answer the question, say "The policies don't cover this" instead of guessing.
+  expected_output: >
+    A plain-language answer of at most 120 words, with an inline citation like
+    (POL-101) for every rule and any exceptions that apply.
+  agent: policy_assistant
+
+review_answer:
+  description: >
+    Review the answer to: {question}
+    Re-read every cited policy with get_policy. Correct anything that doesn't match.
+  expected_output: >
+    The final answer with inline citations like (POL-101), then a line
+    "Review notes:" saying what you changed, or "none".
+  agent: policy_reviewer
+  context: [answer_question]

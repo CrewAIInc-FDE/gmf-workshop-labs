@@ -1,0 +1,18 @@
+
+review_outreach:
+  description: >
+    Review the renewal outreach for account {account_id}. Read the account again with
+    get_client_account and confirm the Segment matches its payment history. Use
+    search_policies to find the policies on lease-end and renewal and on customer
+    communications, and read each one you rely on with get_policy. Remove or correct
+    any offer, option, fee or deadline the policies don't support, such as a loyalty
+    offer for a customer who isn't in good standing. If the draft thanks a
+    good-standing customer for paying reliably, keep that thank-you: it is a tone
+    rule, not an offer. Make sure the message is respectful, is about this customer
+    only, and shows at most the last four digits of any account number.
+  expected_output: >
+    The final outreach in the same three parts (Segment, Channel, Message), then a
+    line "Policy checks:" listing each policy id you relied on and what it allows,
+    then a line "Review notes:" saying what you changed, or "none".
+  agent: outreach_reviewer
+  context: [draft_renewal_outreach]

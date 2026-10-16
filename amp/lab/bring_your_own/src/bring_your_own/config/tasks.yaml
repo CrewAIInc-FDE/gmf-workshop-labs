@@ -1,0 +1,16 @@
+# ============================================================================
+# EDIT HERE - this file describes WHAT work gets done.
+# {request} is filled in from the Input Parameters box when you run the crew in AMP
+# (or the Run parameters dialog in Studio). Leave {request} in the description.
+# Keep the name on the first line (do_the_work) - crew.py refers to it.
+# ============================================================================
+do_the_work:
+  # EDIT HERE: the steps to follow, in order. Small, specific steps work best.
+  description: >
+    Handle this request from a Northwind employee: {request}
+    Use the Northwind data tools to find the facts you need. Do not guess.
+  # EDIT HERE: exactly what a good answer looks like (format, length, what to include)
+  expected_output: >
+    A short, clear answer in plain language.
+  # Keep this line: it names the agent from agents.yaml.
+  agent: assistant

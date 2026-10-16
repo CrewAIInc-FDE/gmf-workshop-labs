@@ -1,0 +1,32 @@
+# Finished example: payoff quote desk. Task 1 does the numbers, task 2 writes the note.
+calculate_payoff:
+  description: >
+    Request from a Northwind employee: {request}
+    Step 1: find the account id in the request and call get_client_account with it.
+    Step 2: take the account's balance and apr exactly as returned. Take the number of days to
+    payoff from the request; if the request gives none, use 10.
+    Step 3: call payoff_quote_calculator with the balance, the apr and the days to payoff.
+    Do not do any arithmetic yourself. If the account is not found, say so and stop.
+  expected_output: >
+    Exactly these lines and nothing else:
+    Account: <id>
+    Account status: <account_status>
+    Principal balance: <balance>
+    APR: <apr>
+    Days to payoff: <days>
+    Per diem: <per diem from the tool>
+    Payoff amount: <payoff amount from the tool>
+  agent: payoff_analyst
+
+write_quote_note:
+  description: >
+    Write a note for the payoff desk rep about the request, using the figures from the previous task.
+    Search the policy library for the early payoff and payoff quote policy and read it.
+    State only figures you were given. Then list what the rep must confirm before a quote is sent,
+    using only conditions from the policy that apply to this request.
+  expected_output: >
+    A note of at most 120 words in this order: one line with the payoff amount and the per diem;
+    one line on how long a quote is valid; then a bullet list headed "Confirm before sending" with
+    one bullet per condition that applies. Cite the policy id, like (POL-103), on every policy rule.
+    Do not include the customer's email or contact details.
+  agent: quote_writer

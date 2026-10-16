@@ -1,0 +1,12 @@
+[project]
+name = "northwind_finance_tools"
+version = "0.1.1"
+description = "Northwind Auto Finance workshop tools: loan payment calculator, payoff quote calculator and credit tier lookup (synthetic, keyless)"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai>=1.10"
+]
+
+[tool.crewai]
+type = "tool"
