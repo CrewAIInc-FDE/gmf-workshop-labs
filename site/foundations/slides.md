@@ -209,13 +209,13 @@ Morning module, 9:30 to 10:30 CT. One hour of plain-language foundations: what g
 @idea Same library, three ways to rank it.
 - Keyword: matches the exact words
 - Semantic: matches meaning, using the map
-- Hybrid: runs both and blends the rankings
+- Hybrid: runs both and blends the scores
 - The mode decides which policies the model ever sees
 @notes
 - Everything so far was semantic search, the map of meaning. There are two other ways to rank, and the choice changes what the model sees.
 - Keyword search matches the words you typed. Great for exact things: a figure, a name, a code. Useless if the customer used different words than the policy did.
 - Semantic search matches meaning. Great for how customers actually talk. Weak on exact figures, because a number is just another blob to the map.
-- Hybrid runs both and blends the two rankings.
+- Hybrid runs both and blends the two scores.
 - Analogy: Ctrl+F versus asking a person. Ctrl+F finds the exact string and nothing else. The person understands what you mean but might not nail the exact clause.
 - For engineers: in this connector keyword is TF-IDF cosine, semantic is bge-small cosine, and hybrid is half of each, with the keyword half scaled to the best keyword score. Only title and body text are indexed, not the policy ID.
 - Likely question: "Which is best?" Short answer: next four slides, with real results. Short version: it depends on the question, which is the whole point.
@@ -280,7 +280,7 @@ Morning module, 9:30 to 10:30 CT. One hour of plain-language foundations: what g
 @notes
 - Here's the honest scoreboard. Six real questions, rank of the right policy in each mode's top three.
 - Hybrid had it in the top three five times out of six, and first on three. Keyword four, semantic three. So hybrid is a good place to start.
-- But look at the Army row. Semantic had it first. Hybrid pushed it to third. And the hurricane row: hybrid is no better than keyword. Blending two rankings can dilute the one that was right.
+- But look at the Army row. Semantic had it first. Hybrid pushed it to third. And the hurricane row: hybrid is no better than keyword. Blending two scores can dilute the one that was right.
 - So the claim I'll make is "usually a good default, always check what came back". I won't say "safest". Six questions isn't a benchmark, and I'd be wary of anyone who quotes you a number off a handful.
 - The first row is the control: when the question uses the policy's own words, all three agree, and the mode barely matters. Differences show up on everything else.
 - Analogy: a panel of two judges who sometimes disagree. Averaging their scores usually works. Sometimes the one who was right gets outvoted.
@@ -359,7 +359,7 @@ Morning module, 9:30 to 10:30 CT. One hour of plain-language foundations: what g
 @notes
 - Teaser for the next module, one minute. Same kind of question as before, but about a specific customer.
 - Hybrid search gets the right policy first, 0.863. It says the account must be no more than 30 days past due, and a documented job loss can allow a third deferral. A plain search-then-answer system would say "yes, send a separation letter".
-- But search can't see this customer's account. When the agent in the capture looked it up, that account was 33 days past due, delinquent, with two missed payments. So the standard deferral isn't available, and the confident answer would have been wrong.
+- But search can't see this customer's account. Look the account up and it was 33 days past due, delinquent, with two missed payments. So the standard deferral isn't available, and the confident answer would have been wrong.
 - Finding the policy was never the hard part. Checking the account and then choosing what to search for next is. That's several steps with decisions between them, and it's what we do after the break.
 - Analogy: the librarian handed you the policy binder. Somebody still has to go and look at the customer's file.
 - Likely question: "Can't we just put the account data into the library?" Short answer: you could for static things, but accounts change by the minute and sit behind their own access rules. You want to ask the system, not copy it. Next module.

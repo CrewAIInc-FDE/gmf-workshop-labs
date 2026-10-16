@@ -43,7 +43,7 @@ Forty-five minutes starting at 15:00 CT. Teams and volunteers show what they bui
 - Prompt examples, so the blank box is not scary: "Agents spend 20 minutes finding the right policy for a late-fee question. Service agents. Answer from policy with the rule cited." One real-sounding problem is enough. Remind: no real customer data in the chat.
 - Everyone posts, not only the presenters, including remote attendees who did not show anything.
 - Thank the presenters, the helpers in the room and in the breakout rooms, and the CrewAI people.
-- TODO (pending an internal decision, do not improvise): what attendees keep afterwards and the next steps. Fill in before 2026-11-04: access to labs and guides after the day, any follow-up session, who to contact. Do NOT state offers, pricing, or timelines until this is decided. Until then say only: "Your facilitator will follow up on next steps."
+- Next steps: say "Your facilitator will follow up on next steps, including access to the labs and guides after today."
 - Note the use-case chat is exported after the call, together with the recording, and turned into a list.
 - Close on time. Do not add anything after 15:45.
 @time 15:35

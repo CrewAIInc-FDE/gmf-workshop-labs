@@ -52,7 +52,7 @@ Morning module, 10:45 to 11:10 CT. Twenty minutes on retrieval versus agents, th
 - The account says: 33 days past due
 @source Synthetic Northwind data. Real connector output: POL-101 and account NW-45512 (examples/c_agent_case.json)
 @notes
-- This is a real run against the Northwind connector, not a made-up story. The question: "A customer on account NW-45512 lost their job and wants to defer their payments. Can we approve a deferral?"
+- These are real results from the Northwind connector, not a made-up story. The question: "A customer on account NW-45512 lost their job and wants to defer their payments. Can we approve a deferral?"
 - Search does its job. It returns POL-101, the Payment Deferral policy, as the top hit. That policy says a documented job loss can even earn a third deferral with supervisor approval. So a pure RAG answer would plausibly say "yes, with a separation letter."
 - But the same policy says, further down, that the account must be no more than 30 days past due. RAG cannot see this customer's account.
 - Look the account up and it is Jordan Pike, 33 days past due, 688 dollars past due, status delinquent, last two payments missed. So the standard deferral is not available. The confident answer would have been wrong.
@@ -82,8 +82,8 @@ Morning module, 10:45 to 11:10 CT. Twenty minutes on retrieval versus agents, th
 @image assets/agent-loop.svg | A goal goes into a loop of three steps: decide the next step, use a tool, look at the result, then back to deciding. The use-a-tool step is highlighted. When the job is done the loop ends with an answer or action. Caption: the flexible part is the choice at each step, which is the point of an agent and the part you constrain.
 @notes
 - Walk the loop with NW-45512, the case from two slides ago. Goal: can we approve a deferral? Decide: I need the deferral rule. Use a tool: policy search, which returns POL-101. Look at the result: deferral needs 30 days or fewer past due. Decide again: I need this customer's account. Use a tool: account lookup. Look at the result: 33 days past due.
-- Go round once more, because this is the good part. Decide: the standard deferral is out, so what are the options? Use a tool: search again, "options for a delinquent customer who cannot qualify for a deferral." That returns POL-109, loan modification. Look at the result: modification needs the account to be at least 12 months old and no more than 60 days past due, plus proof of income within 45 days. NW-45512 opened 2022-01-02 and is 33 days past due, so it fits.
-- Nobody told the agent to run that second search. It chose it because of what the account showed. That is the flexible step.
+- Go round once more, because this is the good part. Decide: the standard deferral is out, so what are the options? Use a tool: search again, "options for a delinquent customer who cannot qualify for a deferral: loan modification or refinancing." That returns POL-109, loan modification. Look at the result: modification needs the account to be at least 12 months old and no more than 60 days past due, plus proof of income within 45 days. NW-45512 opened 2022-01-02 and is 33 days past due, so it fits.
+- That second search is the step a fixed pipeline would never take. An agent takes it because of what the account showed. That is the flexible step. (Be straight about the capture: the calls were scripted to show the sequence an agent would follow, and the results are real connector output. The live build shows a real agent choosing its own calls.)
 - Contrast: same question for NW-46620, Lucia Ferraro. Zero days past due, one late payment in 12 months, a note that she reported reduced work hours in August. Different account, different outcome, same question.
 - The choice at each step is the flexible part. It is the reason agents can handle messy requests. It is also the thing you have to test and limit.
 - Analogy: it is how a new hire works a case. They do not follow a script. They look something up, think, look something else up.
@@ -109,12 +109,13 @@ Morning module, 10:45 to 11:10 CT. Twenty minutes on retrieval versus agents, th
 
 @slide Sometimes you need none of them
 @idea If you can write the rules down, write them down.
-- "Under 30 days past due, fewer than two deferrals, contract older than 6 months: offer a deferral."
+- "No more than 30 days past due, fewer than two deferrals in the last 12 months, at least six on-time payments: offer a deferral."
 - That is a script with three conditions. Keep it a script.
 - Use the model for reading and writing, plain code for the rest
 @notes
 - I want to say this out loud because we are about to spend a day on agents. If you can write the rules down, you do not need an agent. Write the rules down.
 - Example: the deferral eligibility rule. Three conditions. An if statement does that faster, cheaper, and the same way every time. And you can explain it to a regulator in one sentence.
+- The real policy, POL-101, also has exceptions: disaster areas, leases, repossession. Each one is another written rule, so it's still code, not an agent.
 - Use the model where there is language or judgment: reading the customer's message, drafting the reply. Use plain code for everything else.
 - Signs you picked an agent and should not have: its only tool is search, the plan is the same every time, or nobody can say what decision it is making.
 - Signs you need more than RAG: prompts full of "first do this, then if that" and people copying data in from other systems by hand.
@@ -140,7 +141,7 @@ Morning module, 10:45 to 11:10 CT. Twenty minutes on retrieval versus agents, th
 - A: "What is the returned payment fee?"
 - B: "Is this account eligible for a deferral, and when is the next payment due?"
 - C: "Read this hardship email, check policy and account, draft a reply, and have it checked."
-- D: "If under 30 days past due and fewer than two deferrals, offer a deferral."
+- D: "If no more than 30 days past due and fewer than two deferrals in the last 12 months, offer a deferral."
 @notes
 - Quick show of hands, thirty seconds each, no speeches. Read each one and ask: RAG, agent, crew, or none of them?
 - A: RAG. The answer is in the policies. POL-113 has the returned payment fee. Search, answer, cite.
@@ -159,7 +160,7 @@ Morning module, 10:45 to 11:10 CT. Twenty minutes on retrieval versus agents, th
 - This is my five-minute bit. One of the questions I get asked a lot is: okay, I use AI in my job. What is the difference between you and Claude, or you and my ChatGPT desktop app?
 - The one-line answer I like to give is: Claude is a tool for people. Crew is a tool for business.
 - When you are using a chat tool as a person, you see what it produces. If something does not sound right, you ask it to clarify. It is human in the loop, iterative, every single step. The beauty of Claude is that it is iterative.
-- A desktop assistant also does not have a hosted environment. You turn your laptop off because you are on PTO, and it does not run for two weeks. A business process needs to run when you are not there.
+- A desktop assistant is built for one person at a time, working alongside them. A business process has to run when you are not there: you go on PTO for two weeks, and it still runs, the same way, for everyone.
 - Keep it light. Do not turn this into a product comparison. The point is the difference in the job each one does.
 - Likely question: "Can I not just use the chat tool for this?" Short answer: for your own work, yes, that is what it is for. This is for when the work has to happen the same way, for everyone, whether or not anyone is watching.
 - These lines are cues from how I already say it. Say it your way.
@@ -186,7 +187,7 @@ Morning module, 10:45 to 11:10 CT. Twenty minutes on retrieval versus agents, th
 - Runs hosted in the cloud
 - Every run leaves a trace
 @notes
-- Here is the idea. What you actually want to do is constrain it. Limit the agency. Use the ability to take flexible inputs to produce deterministic outputs.
+- Here is the idea. What you actually want to do is constrain it. Limit the agency. Use the ability to take flexible inputs to produce repeatable outputs: the same shape every time, not identical words.
 - That is how the outcome stays reliable and repeatable regardless of the inputs.
 - How does CrewAI do it? Five things, and you will see all five in the build. Small single-purpose agents: the way to do that is by being just the right amount of specific. Scoped tools: this agent can search policies, and that is all. Tasks with an expected output: the shape of the answer is written down. Hosted runs: it runs in AMP, not on someone's laptop. Traces: every run records what it did, so you can see what happened.
 - Bridge: "So let's build one. I am going to describe a crew in plain English in Studio, and as it builds, watch for those five things."
