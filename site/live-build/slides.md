@@ -94,11 +94,12 @@ A customer in a declared disaster area missed a payment last week. Will they be 
 - <!-- SHOT: Output tab with the review task open, showing the answer and the Review notes line -->
 - Read the answer aloud, then ask the room: "Could you check this? Which policy is it based on?" They can: that is the point of the citation.
 
-**Timing marks (observed in rehearsal, 2026-10-16):** plan appears in about 6 seconds, build takes about 50 seconds, a run takes 20 to 25 seconds. Typed and running by 11:16. If it is not done by 11:21, stop narrating a spinner and move to the fallback. One of our three rehearsal runs answered that the policy library returned nothing, and took over 90 seconds: if that happens, click Run again rather than debugging.
+**Timing marks (observed in rehearsal, 2026-10-16):** plan appears in about 6 seconds, build takes about 50 seconds, a run takes 20 to 25 seconds. Typed and running by 11:16. If it is not done by 11:21, stop narrating a spinner and move to the fallback. One of our three rehearsal runs answered that the policy library returned nothing, and took over 90 seconds: if that happens, click Run again once rather than debugging; if that run also fails, go to the fallback.
 
 **Fallback (if Studio is slow or builds something odd)**
 - Say: "Studio is a live system, so let me show you one I built earlier." Do not apologise at length.
 - Switch to the second tab: the pre-deployed automation "<fallback crew name TBD>". Open it in AMP, go to the **Run** tab (the flow is drawn as a diagram), click **Run Flow**, paste the same question under **Input Parameters**, click **Run Flow** again, and narrate the trace exactly as above. Results appear under **Executions** after about 15 to 20 seconds; open **Final Output** and read the text after `{"raw" =>`.
+- If the fallback run also fails or hangs, do not retry: switch to the third tab, the fallback's completed execution from the day before, and narrate its **Final Output** and **Traces** the same way. The rule is one retry, then the fallback, then the saved execution.
 - TODO: name of the pre-deployed fallback crew is to be decided. Fill it in here and in the first slide's notes.
 - If it is only slow at the start (no plan, or nothing on the canvas after about 90 seconds): talk through the five things on the previous slide while it works, and switch if it is still empty at 11:14.
 

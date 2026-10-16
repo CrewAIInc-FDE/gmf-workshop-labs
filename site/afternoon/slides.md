@@ -100,13 +100,13 @@ Ten minutes at 12:30 CT. Then the labs are self-paced until 15:00, and show and 
 - Format: `SHOW | team or your name | lab | one line on what you built`
 - Bring your own: add `| PROBLEM: ... | USERS: ...`
 - Post by 15:00 so we can pick; earlier is better
-- Remote? Post in the main chat, or ask your room helper to post it for you
+- Remote? Post in the main chat, or in your room chat and your helper passes it on
 - The room: a few teams show, plus 3-4 remote volunteers who share camera and screen
 @notes
 - Example to read aloud: `SHOW | Team Pioneers | Intake triage | routes a hardship letter and flags it urgent`
 - Bring your own example: `SHOW | Dana solo | Bring your own | drafts a late-fee waiver reply | PROBLEM: agents rewrite the same reply all day | USERS: service agents`
 - Solo is fine. Unfinished is fine. If it runs once, you can show it.
-- Remote: if you are in a breakout room, the room chat does not reach the main chat. Either step back to the main session to post, or ask your room helper to post it for you. We will also pull everyone back to the main room shortly before 15:00.
+- Remote: if you are in a breakout room, the room chat does not reach the main chat. Either step back to the main session to post, or post it in the room chat and your room helper passes it to us. We will also pull everyone back to the main room shortly before 15:00.
 - Show and tell is three minutes each: show the run, say what you changed, say who it helps.
 - Likely question: "Do I have to present?" Answer: no. Posting is only if you want a slot. We will pick a few in the room and 3-4 remote volunteers, and keep it moving.
 - Likely question: "Where is the use case part?" Answer: at the end of show and tell, everyone posts a use case in the chat. Format on the closing slide there.
