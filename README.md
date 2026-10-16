@@ -1,40 +1,17 @@
-# CrewAI workshop labs - GM Financial, 2026-11-04
+# CrewAI workshop labs - 2026-11-04
 
 Hands-on labs for the afternoon build session. Everything here uses **Northwind Auto
-Finance**, a fictional auto lender, and synthetic data. Never put GM Financial data in
+Finance**, a fictional auto lender, and synthetic data. Never put real customer or company data in
 this environment.
 
-## Three ways to build
+## Where to start
 
-| Path | What you need | Start here |
-| --- | --- | --- |
-| **CrewAI Studio** (visual, no code) | A browser and the workshop Studio invite | The lab guide, "Studio" sections |
-| **GitHub Codespace** (code, nothing to install) | A free GitHub account | Click **Code > Codespaces > Create codespace on main** |
-| **Your own laptop** (code) | Python 3.10 to 3.13 and access to PyPI | "Local install" below |
+- **Lab guides** (Code and Studio tracks): https://crewaiinc-fde.github.io/crewai-field-labs/workshops/
+- **Teaching slides**: https://crewaiinc-fde.github.io/gmf-workshop-labs/ (built from `site/`)
 
-## In a Codespace
-
-The codespace installs everything for you (about five minutes the first time - start it before lunch). When the
-terminal shows the welcome message:
-
-1. Paste the OpenAI key from the front of the room into the `.env` file after
-   `OPENAI_API_KEY=` and save.
-2. Run `bash scripts/preflight.sh` - every line should say PASS.
-3. Pick a lab: `cd labs/policy_qa && crewai run`
-
-## Local install
-
-```bash
-pip install uv                      # or: curl -LsSf https://astral.sh/uv/install.sh | sh
-uv tool install crewai==1.15.23
-cp .env.example .env                # then paste the OpenAI key into .env
-bash scripts/preflight.sh           # Windows: powershell -ExecutionPolicy Bypass -File scripts\preflight.ps1
-cd labs/policy_qa
-crewai install
-crewai run
-```
-
-If `pip` or `crewai install` cannot reach PyPI from your network, use a Codespace instead.
+The Code track runs in a dev container image on your laptop and deploys to CrewAI AMP; the lab
+guides walk through it. The folders below are an earlier local-run version of the labs, kept for
+reference.
 
 ## The labs
 

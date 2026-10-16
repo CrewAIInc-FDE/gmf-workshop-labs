@@ -1,5 +1,5 @@
 {
-  "name": "CrewAI Workshop - GM Financial",
+  "name": "CrewAI Workshop - Northwind labs",
   "image": "mcr.microsoft.com/devcontainers/python:3.12",
   "onCreateCommand": "bash .devcontainer/setup.sh",
   "postCreateCommand": "test -f .env || cp .env.example .env",
