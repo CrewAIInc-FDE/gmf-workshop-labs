@@ -10,7 +10,7 @@
 
  Then reshape this project: rename the agent, split the work into two or three agents with
  one job each, and write tasks whose expected output matches step 3. You can use the
- Northwind data through the connector, or no tools at all. Never paste GM Financial data
+ Northwind data through the connector, or no tools at all. Never paste real customer or company data
  into the workshop environment.
 
 ## Run it

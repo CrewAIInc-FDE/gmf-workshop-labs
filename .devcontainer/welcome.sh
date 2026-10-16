@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 cat <<'EOF'
 
-  -- CrewAI Workshop: GM Financial ------------------------------------------
+  -- CrewAI Workshop: Northwind labs ----------------------------------------
   Everything is installed. Two steps before your first run:
 
-   1. Open the file  .env  (it is already open in a tab) and paste the
-      OpenAI key from the screen at the front of the room after
+   1. Open the file  .env  (it is already open in a tab) and paste your OpenAI key after
       OPENAI_API_KEY=   Paste into the FILE, not this terminal. Save.
 
    2. Check you can reach everything:     bash scripts/preflight.sh
