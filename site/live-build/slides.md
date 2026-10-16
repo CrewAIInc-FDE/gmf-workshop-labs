@@ -1,4 +1,4 @@
-# Live build: a policy Q&A crew in Studio
+# Live build: a policy Q&A automation in Studio
 
 Morning module, 11:10 to 11:25 CT. One presenter drives CrewAI Studio on the big screen while the room watches. The presenter script is in the notes of each slide. The 11:25 slide hands over to the host.
 
@@ -12,12 +12,12 @@ Morning module, 11:10 to 11:25 CT. One presenter drives CrewAI Studio on the big
 **Before you start (do this at the break, not live)**
 - Browser signed in to app.crewai.com, in the workshop organization, with Crew Studio open. Zoom the browser to 125 percent so the back row can read it.
 - Check the connection once: Studio should offer the "Northwind Workshop Data" connection with the tools `search_policies` and `get_policy`. If the tool shows without a green check, tell a facilitator now, not live.
-- Pre-deployed fallback crew is ready and its run form is open in a second tab: "<fallback crew name TBD>".
-- Paste buffer ready (two prompts, see the next slide's notes). Have the question ready too.
-- <!-- SHOT: Studio home with "Describe your automation" box and the Crews/Flows dropdown set to Crews -->
+- Pre-deployed fallback automation (built on the Flows path) is ready and its run form is open in a second tab: "<fallback crew name TBD>".
+- Paste buffer ready (the prompt and the question, see the next slide's notes). In Studio, the dropdown next to the arrow starts on Crews: practice selecting Flows once.
+- <!-- SHOT: Studio home with "Describe your automation" box and the dropdown open, Flows highlighted -->
 
 **Say, at 11:10**
-- Okay, so let's actually build one. I am going to describe a crew in plain English, and Studio builds it. Not a single line of code.
+- Okay, so let's actually build one. I am going to describe a team of agents in plain English, and Studio builds it. Not a single line of code.
 - The goal: a customer service rep at Northwind asks a policy question. One agent answers from the policies and cites them. A second agent re-reads every policy the first one cited and fixes anything that does not match.
 - Ask the room to watch for five things from the last section: small agents, scoped tools, a task with an expected output, a hosted run, and a trace.
 - Analogy: it is a drafter and a reviewer. Same as how any real review process works.
@@ -27,22 +27,23 @@ Morning module, 11:10 to 11:25 CT. One presenter drives CrewAI Studio on the big
 
 @slide Describe it, run it, read the trace
 @idea Plain English in. A crew on the canvas. A trace of every step.
-- Mode: Crews
-- Describe the crew, press the arrow
+- Mode: Flows
+- Describe it, press the arrow, confirm the plan
 - Click Run, type a question, Execute
 - Read the timeline
 @notes
 **Step 1 - Describe it (11:11 to 11:14)**
 1. In AMP, open Crew Studio from the left menu.
-2. In the "Describe your automation" box, check the dropdown next to the arrow says **Crews**, not Flows. Say it out loud: "Make sure this says Crews. Flows is a different thing we will get to later."
-3. Paste the prompt below and press the arrow. (This is the finished-crew prompt from the Policy Q&A Studio lab, so the room can find it again in the lab guide.)
+2. In the "Describe your automation" box, open the dropdown next to the arrow. It starts on **Crews**. Select **Flows**. Say it out loud: "Make sure this says Flows. Crews is the older Studio and the screens will not match." (Flows is the newer Studio. A flow is the whole automation, and a crew is a small team of agents that does the work of one step. Studio builds the flow and puts the two agents in one step.)
+3. Paste the prompt below, check the dropdown still says Flows, and press the arrow. (This is the finished-crew prompt from the Policy Q&A Studio lab, so the room can find it again in the lab guide.)
 
 ```text
 Build a crew for Northwind Auto Finance, a fictional auto lender, with two agents and two tasks that run in order. Agent 1, a Northwind policy assistant with the Northwind Workshop Data tools search_policies and get_policy, answers a customer service agent's question about Northwind's policies: {question}. Its task: answer in plain language in at most 120 words, cite every rule by policy id like (POL-101), include any exceptions that apply, say "The policies don't cover this" instead of guessing when the policies don't answer the question, and don't paste policy text into the answer. Agent 2, a Policy compliance reviewer with the tool get_policy, gets the first answer as context. Its task: re-read every policy cited in the answer, correct any number, condition or citation that doesn't match, add any exception the customer needs to know, and return the final answer followed by a line "Review notes:" saying what you changed, or "none".
 ```
 
-- Studio Chat builds it in about a minute. Names will differ slightly from the lab screenshots, that is fine.
-- <!-- SHOT: the prompt pasted in the box, Crews selected -->
+4. Studio Assistant shows a plan after about 6 seconds: six short steps (receive the question, draft the answer, answer rules, handle gaps, compliance review, final answer with review notes) and "Does this look correct?". Read two of the steps aloud, then click **Yes, this is correct**. If you forget, nothing happens: that is the most common stall.
+- Studio then builds for about 50 seconds ("Built 1 step"). A welcome tour pop-up may appear on a first project: click Next through it or close it. Names will differ slightly from the lab screenshots, that is fine.
+- <!-- SHOT: the prompt pasted in the box, Flows selected, then the plan with the Yes, this is correct button -->
 
 **What to say while it generates (about 60 to 90 seconds - do not sit in silence)**
 - This is the part that used to take a developer a day. I described a team and a job. Studio is turning that into agents and tasks.
@@ -50,11 +51,12 @@ Build a crew for Northwind Auto Finance, a fictional auto lender, with two agent
 - Constraining agency, already: I told it the length, the citation format, and what to say when the policies are silent. That is the "set format" part of the last slide.
 
 **Step 2 - Read the canvas (11:14 to 11:16)**
-- Expect two agent cards and two task cards. The agent that answers has the Northwind Workshop Data tool with a green check. The reviewer has `get_policy` only. Point at that: the reviewer cannot search, it can only re-read. That is a scoped tool.
-- Click the pencil on one agent and one task. Read the role, goal, and backstory. Read the task's expected output out loud: "at most 120 words, cites by policy id".
-- Point at `{question}` in the task: that is the input. One crew, any question.
-- <!-- SHOT: canvas with two agent cards and two task cards, tool green checks visible -->
-- If the canvas shows one agent only or a Flow: do not debug live. Go to the fallback (see the last slide's notes for the exact switch).
+- Expect a **Trigger** card (leave it alone: the flow starts when you click Run) and one step card, named like "Answer Policy Question Crew", that says **2 agents across 2 tasks**. Point at that: the flow is the whole automation, and the step is the crew of two.
+- Click the step to open the crew: a draft task and a review task, each with its agent and **Apps: Northwind Workshop Data**. Click an agent: Task, Profile (role, goal, backstory), Model, Apps. The reviewer should list `get_policy` only. Point at that: the reviewer cannot search, it can only re-read. That is a scoped tool. (If Studio gave the reviewer more tools, say so and move on.)
+- Read the step's Output out loud: "at most 120 words, cites by policy id".
+- Point at `${state.question}` in the task: that is the input. One automation, any question.
+- <!-- SHOT: the flow canvas with the Trigger card and the "2 agents across 2 tasks" step, then the crew opened with both tasks -->
+- If the canvas shows two separate steps instead of one crew step, that is fine: the first output still feeds the reviewer. If it shows only one agent, or the agent has no Apps line: do not debug live. Go to the fallback (see the last slide's notes for the exact switch).
 
 **Likely question:** "Where does it get the policies?" Short answer: from a data connector, a standard plug called MCP. It is already set up as "Northwind Workshop Data". Agents only get the tools you hand them.
 @time 11:12
@@ -67,7 +69,7 @@ Build a crew for Northwind Auto Finance, a fictional auto lender, with two agent
 - Answer ends with a Review notes line
 @notes
 **Step 3 - Run it (11:16 to 11:21)**
-1. Click **Run** (top right). The Run parameters dialog opens.
+1. Click **Run** (top right). The Run parameters dialog opens. (If the Run button is grey, Studio Chat is still working: wait for "Built".)
 2. In **question**, select all and type exactly:
 
 ```text
@@ -79,26 +81,26 @@ A customer in a declared disaster area missed a payment last week. Will they be 
 
 **What to say while it runs (about 2 to 4 minutes)**
 - It is running in AMP, in the cloud. My laptop is not doing the work. If I closed it right now, the run would keep going. That is the hosted part.
-- Click the Run tab and open the Timeline. Narrate each row as it appears: "That is the first agent calling search_policies. Now it is calling get_policy to read the one it found. Now it is writing."
+- The Output tab shows the step with both tasks while it works, and finishes in about 20 to 25 seconds. Then click the **Traces** tab and open the Flow Timeline. Narrate the rows: "That is the first agent calling search_policies. Now it is calling get_policy to read the one it found. Now it is writing."
 - Then the second agent: "Now the reviewer. It is re-reading each policy that the first answer cited, and checking the numbers."
 - Tie it back to the RAG slide: the search step is RAG, used as one tool. The agent chose when to call it. The reviewer is the check.
 - Constraining agency, third time: "Notice nobody told it which tool to use in which order. It reasoned about that. But the shape of the result, the length, the citation, the Review notes line, was fixed."
-- <!-- SHOT: run timeline mid-run showing search_policies and get_policy calls -->
+- <!-- SHOT: Traces tab with the Flow Timeline showing search_policies and get_policy calls -->
 
 **Expected output (about; confirm in rehearsal)**
 - The final answer should say that a late fee is not charged once the customer is enrolled in the Natural Disaster Hardship Program, that they enroll by asking within 120 days of the declaration, and cite `(POL-115)` and likely `(POL-102)` for the late-fee rule. It stays under about 120 words.
 - It ends with a line starting `Review notes:` saying what the reviewer changed, or `none`.
-- Click the final **Completed** row to open Event details and read the Output. After a new run, click the new Completed row, since the panel can keep showing the previous run.
-- <!-- SHOT: Completed event details with the answer and the Review notes line -->
+- Go to the **Output** tab, open the review task, and click **Raw** so the lines stay apart. The reviewer's output is the final answer. In our runs the Review notes line was `none` in some runs and a short correction in others (for example a corrected lease deferral limit). Both are right: say so.
+- <!-- SHOT: Output tab with the review task open, showing the answer and the Review notes line -->
 - Read the answer aloud, then ask the room: "Could you check this? Which policy is it based on?" They can: that is the point of the citation.
 
-**Timing marks:** typed and running by 11:16. If it is not done by 11:21, stop narrating a spinner and move to the fallback.
+**Timing marks (observed in rehearsal, 2026-10-16):** plan appears in about 6 seconds, build takes about 50 seconds, a run takes 20 to 25 seconds. Typed and running by 11:16. If it is not done by 11:21, stop narrating a spinner and move to the fallback. One of our three rehearsal runs answered that the policy library returned nothing, and took over 90 seconds: if that happens, click Run again rather than debugging.
 
 **Fallback (if Studio is slow or builds something odd)**
 - Say: "Studio is a live system, so let me show you one I built earlier." Do not apologise at length.
-- Switch to the second tab: the pre-deployed crew "<fallback crew name TBD>". Open it in AMP, go to the **Run** tab, click **Run Automation**, paste the same question under **Input Parameters**, click **Execute Automation**, and narrate the timeline exactly as above.
+- Switch to the second tab: the pre-deployed automation "<fallback crew name TBD>". Open it in AMP, go to the **Run** tab (the flow is drawn as a diagram), click **Run Flow**, paste the same question under **Input Parameters**, click **Run Flow** again, and narrate the trace exactly as above. Results appear under **Executions** after about 15 to 20 seconds; open **Final Output** and read the text after `{"raw" =>`.
 - TODO: name of the pre-deployed fallback crew is to be decided. Fill it in here and in the first slide's notes.
-- If it is only slow at the start (nothing on the canvas after about 90 seconds): talk through the five things on the previous slide while it works, and switch if it is still empty at 11:14.
+- If it is only slow at the start (no plan, or nothing on the canvas after about 90 seconds): talk through the five things on the previous slide while it works, and switch if it is still empty at 11:14.
 
 **Likely question:** "Did it really read the policies, or guess?" Short answer: open the timeline. You can see the tool calls and what they returned. That is why every run leaves a trace.
 @time 11:16
